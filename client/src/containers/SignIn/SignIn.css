@@ -1,0 +1,24 @@
+.input-fields {
+  position: absolute;
+  max-width: 400px;
+  min-width: 200px;
+  left: 15%;
+  right: 15%;
+  top: 25%;
+}
+
+#please-sign-in {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#sign-in-button {
+  position: absolute;
+  left: 8%;
+}
+
+#sign-up-button {
+  position: absolute;
+  right: 10%;
+}
