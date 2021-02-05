@@ -10,6 +10,7 @@ const Navbar = () => {
         </li>
         <li className="tab disabled">
           <a href="/">Projects</a>
+        
         </li>
       </ul>
       <nav>
