@@ -31,12 +31,16 @@ mongoose.connect(
   connection.on("error", (err) => {
     console.log("Mongoose connection error: ", err);
   });
-  
+
+  const DeveloperController = require("./controller/controller.js")
+
 app.get("/api/config", (req,res) => {
     res.json({
         success: true,
     });
 });
+
+app.use ("/api/developer", DeveloperController)
 
 app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "client/build/index.html"));
