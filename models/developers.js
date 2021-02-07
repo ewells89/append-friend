@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 // const languageSchema = new Schema({name:String});
 
-const developersSchema = new Schema ({
+const developerSchema = new Schema ({
     username: {
         type: String,
         required: "Enter a Username",
@@ -62,6 +62,6 @@ const developersSchema = new Schema ({
     }],
 });
 
-const Developers = mongoose.model("Developers", developersSchema);
+const Developer = mongoose.model("Developer", developersSchema);
 
-module.exports = Developers
+module.exports = Developer;
