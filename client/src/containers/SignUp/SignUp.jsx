@@ -1,7 +1,18 @@
 import React from "react";
 import "./SignUp.css";
+import SignupForm from "../../components/SignUpForm/SignUpForm";
+import axios from "axios";
 
 function SignUp () {
+  const handleFormSubmit = (e,userData) => {
+    e.preventDefault();
+    axios.post("api/developer",userData).then((response) => {
+      console.log(response.data);
+    }).catch((err) => {
+      console.log(err);
+    });
+  };
+
   return (
     <div className="container">
       <div className="row">
@@ -10,43 +21,9 @@ function SignUp () {
         </div>
       </div>
       <div className="row">
-        <form className="col s12">
-          <div className="row">
-            <div className="input-field col s6">
-              <input
-                placeholder="First Name"
-                id="first_name"
-                type="text"
-                className="validate"
-              />
-              <label for="first_name">First Name</label>
-            </div>
-            <div className="input-field col s6">
-              <input id="last_name" type="text" className="validate" />
-              <label for="last_name">Last Name</label>
-            </div>
-          </div>
-          <div className="row">
-            <div className="input-field col s12">
-              <input id="password" type="password" className="validate" />
-              <label for="password">Password</label>
-            </div>
-          </div>
-          <div className="row">
-            <div className="input-field col s12">
-              <input id="email" type="email" className="validate" />
-              <label for="email">Email</label>
-            </div>
-          </div>
-          <button
-            className="btn waves-effect waves-dark"
-            type="submit"
-            name="action"
-          >
-            Submit
-          </button>
-        </form>
+      <SignupForm handleFormSubmit={handleFormSubmit}/>
       </div>
+      
     </div>
   );
 }
