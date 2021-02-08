@@ -27,9 +27,9 @@ const Developers = () => {
             appRole: "Mentee"
         },
         {
-            username: "jdeer74",
+            username: "jdeer73",
             name: "John Deer",
-            gitHub: "@jdeer74",
+            gitHub: "@jdeer73",
             languages: ["JavaScript","HTML5","CSS"],
             phone: 5555555555,
             experience: 15,
