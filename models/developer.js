@@ -35,7 +35,7 @@ const developerSchema = new Schema ({
     },
     phone:{
         type: Number,
-        validate: [({ length }) => length >= 10, "Phone number can't exceed 10 numbers."],
+        validate: [({ length }) => maxlength =11, "Phone number can't exceed 10 numbers."],
     },
     experience:{
         type: Number,
@@ -54,11 +54,11 @@ const developerSchema = new Schema ({
     },
     followedUsers: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: "developersSchema",
+        ref: "developerSchema",
     }],
     usersFollowing:[{
         type: mongoose.Schema.Types.ObjectId,
-        ref: "developersSchema",
+        ref: "developerSchema",
     }],
 });
 
