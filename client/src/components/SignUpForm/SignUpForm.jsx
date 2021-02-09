@@ -55,7 +55,7 @@ const SignupForm = ({handleFormSubmit}) => {
             </div>
           <div className="input-field col s6">
               <input id="github" type="text" className="validate" onChange={(e) => setGithub(e.target.value)} value={github} />
-              <label for="gihub">Github Profile</label>
+              <label for="github">Github Profile</label>
             </div>
             <div className="input-field col s6">
               <input id="location" type="text" className="validate" onChange={(e) => setLocation(e.target.value)} value={location} />
