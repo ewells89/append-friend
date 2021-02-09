@@ -3,14 +3,16 @@ import "./SignUp.css";
 import SignupForm from "../../components/SignUpForm/SignUpForm";
 import axios from "axios";
 
-function SignUp () {
-  const handleFormSubmit = (e,userData) => {
-    e.preventDefault();
-    axios.post("api/developer",userData).then((response) => {
-      console.log(response.data);
-    }).catch((err) => {
-      console.log(err);
-    });
+function SignUp() {
+  const handleFormSubmit = (userData) => {
+    axios
+      .post("api/developer", userData)
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
@@ -21,9 +23,8 @@ function SignUp () {
         </div>
       </div>
       <div className="row">
-      <SignupForm handleFormSubmit={handleFormSubmit}/>
+        <SignupForm handleFormSubmit={handleFormSubmit} />
       </div>
-      
     </div>
   );
 }
