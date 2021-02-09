@@ -6,7 +6,7 @@ const SignupForm = ({handleFormSubmit}) => {
     const[password,setPassword]=useState("");
     const[email,setEmail]=useState("");
     const[phone,setPhone]=useState("");
-    const[github,setGithub]=useState("");
+    const[gitHub,setGithub]=useState("");
     const[location,setLocation]=useState("");
     const[occupation,setOccupation]=useState("");
     const[experience, setExperience]= useState("");
@@ -18,7 +18,7 @@ const SignupForm = ({handleFormSubmit}) => {
         <div>
             <form className="col s12" onSubmit={(e) =>{
                 handleFormSubmit(e,{
-                    name,username,password,email,phone,github,location,occupation,experience,languages,followedUsers,usersFollowing
+                    name,username,password,email,phone,gitHub,location,occupation,experience,languages,followedUsers,usersFollowing
                 });
             }}>
           <div className="row">
@@ -54,7 +54,7 @@ const SignupForm = ({handleFormSubmit}) => {
               <label for="phone">Phone</label>
             </div>
           <div className="input-field col s6">
-              <input id="github" type="text" className="validate" onChange={(e) => setGithub(e.target.value)} value={github} />
+              <input id="github" type="text" className="validate" onChange={(e) => setGithub(e.target.value)} value={gitHub} />
               <label for="github">Github Profile</label>
             </div>
             <div className="input-field col s6">
