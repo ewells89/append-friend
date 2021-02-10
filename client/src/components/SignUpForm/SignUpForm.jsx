@@ -100,13 +100,13 @@ const SignupForm = ({ handleFormSubmit }) => {
           </div>
           <div className="input-field col s6">
             <input
-              id="github"
+              id="gitHub"
               type="text"
               className="validate"
               onChange={updateForm}
               value={state.gitHub}
             />
-            <label for="github">Github Profile</label>
+            <label for="gitHub">Github Profile</label>
           </div>
           <div className="input-field col s6">
             <input
