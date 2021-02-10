@@ -5,7 +5,7 @@ const developerController = require("../../controller/developer");
 // axios.post("/api/developer", newUser)
 router
   .route("/")
-  .all(isAuth)
+  // .all(isAuth)
   .get(developerController.getALL)
   .post(developerController.create);
 
