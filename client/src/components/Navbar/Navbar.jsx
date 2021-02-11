@@ -1,18 +1,11 @@
 import React from "react";
 import "./Navbar.css";
+import NavTabs from "../NavTabs/NavTabs.jsx";
 
 const Navbar = () => {
   return (
     <>
-      <ul className="tabs z-depth-1">
-        <li className="tab">
-          <a href="/">Developers</a>
-        </li>
-        <li className="tab disabled">
-          <a href="/">Projects</a>
-        
-        </li>
-      </ul>
+      <NavTabs />
       <nav>
         <div className="nav-wrapper">
           <a href="/" data-target="mobile-demo" className="sidenav-trigger">
@@ -20,7 +13,7 @@ const Navbar = () => {
           </a>
           <ul className="left hide-on-med-and-down col">
             <li>
-              <a href="/">All Developers</a>
+              <a href="/developers">All Developers</a>
             </li>
             <li>
               <a href="/">Linked Developers</a>
@@ -34,7 +27,7 @@ const Navbar = () => {
 
       <ul className="sidenav" id="mobile-demo">
         <li>
-          <a href="/">All Developers</a>
+          <a href="/developers">All Developers</a>
         </li>
         <li>
           <a href="/">Linked Developers</a>
