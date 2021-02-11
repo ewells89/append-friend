@@ -5,6 +5,7 @@ import SignUp from "./containers/SignUp/SignUp";
 import Home from "./containers/Home/Home";
 import Footer from "./components/Footer/Footer";
 import Developers from "./containers/Developers/Developers";
+import Profile from "./containers/Profile/Profile";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route exact path="/signin" component={SignIn} />
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/developers" component={Developers} />
+        <Route exact path="/profile" component={Profile} />
         <Footer/>
       </Switch>
     </Router>
