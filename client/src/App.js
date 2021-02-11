@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import 'materialize-css/dist/css/materialize.min.css';
 import SignIn from "./containers/SignIn/SignIn";
 import SignUp from "./containers/SignUp/SignUp";
 import Home from "./containers/Home/Home";

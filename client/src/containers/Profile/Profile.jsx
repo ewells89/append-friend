@@ -3,12 +3,14 @@ import Navbar from "../../components/Navbar/Navbar";
 import axios from "axios";
 import './Profile.css';
 
+
 const Profile = () => {
     const [user, setUser] = useState ([]);
 
-    // useEffect(() => {
-    //     // getDevs()
-    //   }, []);
+    useEffect(() => {
+        // getDevs()
+      }, []);
+    
 
     return (
         <>
@@ -17,7 +19,7 @@ const Profile = () => {
 
                 <div className="row">
                     <form>
-                        <div className="col s6">
+                        <div className="col s6" id="profilePageColumn">
                             
                             <div className="input-field">
                             <input id="first_name" type="text" className="validate"/>
@@ -54,6 +56,29 @@ const Profile = () => {
                             <label for="gitHub">GitHub URL </label>
                             </div>
 
+                        </div>
+
+                        <div className="col s6" id="profilePageColumn">
+                            <label>Role</label>
+                                <select className="browser-default">
+                                    <option value="" disabled selected>Choose your role</option>
+                                    <option value="1">Mentor</option>
+                                    <option value="2">Mentee</option>
+                                    <option value="3">Collaborator</option>
+                                </select>
+
+                            <div class="input-field">
+                            <label>Languages</label>
+                                <select multiple>
+                                <option value="" disabled selected>Select languages</option>
+                                <option value="1">JavaScript</option>
+                                <option value="2">Angular</option>
+                                <option value="3">React</option>
+                                <option value="4">Vue</option>
+                                
+                                </select>
+                                
+                            </div>
                         </div>
 
                     </form>
