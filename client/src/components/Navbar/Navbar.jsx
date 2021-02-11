@@ -1,18 +1,11 @@
 import React from "react";
 import "./Navbar.css";
+import NavTabs from "../NavTabs/NavTabs.jsx";
 
 const Navbar = () => {
   return (
     <>
-      <ul className="tabs z-depth-1">
-        <li className="tab">
-          <a href="/developers">Developers</a>
-        </li>
-        <li className="tab disabled">
-          <a href="/">Projects</a>
-        
-        </li>
-      </ul>
+      <NavTabs />
       <nav>
         <div className="nav-wrapper">
           <a href="/" data-target="mobile-demo" className="sidenav-trigger">
