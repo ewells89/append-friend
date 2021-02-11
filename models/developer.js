@@ -61,6 +61,10 @@ const developerSchema = new Schema ({
         ref: "developerSchema",
     }],
 });
+developerSchema.pre("save", function(next){
+    this.username = this.username.toLowerCase();
+    next();
+});
 
 const Developer = mongoose.model("Developer", developerSchema);
 
