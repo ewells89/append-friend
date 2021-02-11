@@ -1,0 +1,18 @@
+#landing-title {
+    margin-bottom: 200px;
+}
+
+#landing-background {
+    height: 500px;
+    position: relative;
+    border: 3px solid green;
+}
+
+.landing-buttons {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}

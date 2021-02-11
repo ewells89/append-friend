@@ -28,7 +28,7 @@ const SignIn = () => {
               </div>
             </div>
           </div>
-          <button id="sign-in-button" className="waves-effect waves-dark btn">Sign in</button>
+          <a id="sign-in-button" className="waves-effect waves-dark btn" href="/developers">Sign in</a>
           <a href="/signup" id="sign-up-button" className="waves-effect waves-dark btn">Sign up</a>
         </form>
       </div>

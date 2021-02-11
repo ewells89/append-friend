@@ -6,7 +6,7 @@ const Navbar = () => {
     <>
       <ul className="tabs z-depth-1">
         <li className="tab">
-          <a href="/">Developers</a>
+          <a href="/developers">Developers</a>
         </li>
         <li className="tab disabled">
           <a href="/">Projects</a>
@@ -20,7 +20,7 @@ const Navbar = () => {
           </a>
           <ul className="left hide-on-med-and-down col">
             <li>
-              <a href="/">All Developers</a>
+              <a href="/developers">All Developers</a>
             </li>
             <li>
               <a href="/">Linked Developers</a>
@@ -34,7 +34,7 @@ const Navbar = () => {
 
       <ul className="sidenav" id="mobile-demo">
         <li>
-          <a href="/">All Developers</a>
+          <a href="/developers">All Developers</a>
         </li>
         <li>
           <a href="/">Linked Developers</a>
