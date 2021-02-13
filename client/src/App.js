@@ -17,8 +17,8 @@ function App() {
         <Route exact path="/signin" component={(props) => <SignIn {...props} setToken={setToken} />} />
         <Route exact path="/signup" component={(props) => <SignUp {...props} setToken={setToken} />} />
         <ProtectedRoute exact path="/developers" component={Developers} token={token}/>
-        {/* <ProtectedRoute exact path="/profile" component={Profile} token={token}/> */}
-        <Route exact path="/profile" component={Profile} />
+        <ProtectedRoute exact path="/profile" component={Profile} token={token}/>
+        {/* <Route exact path="/profile" component={Profile} /> */}
       </Switch>
       <Footer/>
     </Router>

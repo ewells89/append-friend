@@ -43,7 +43,7 @@ module.exports = {
         bcrypt.compare(req.body.password, foundUser.password).then((result) => {
             console.log(result);
             if(result){
-                const token = jwt.sign({username:foundUser.username}, process.env.JWT_SIGNATURE);
+                const token = jwt.sign({username:foundUser.username}, process.env.JWT_SIGNATURE, {expiresIn:60*60});
                 res.json({
                     token: token
                 });
