@@ -28,13 +28,13 @@ mongoose.connect(
 // app.use("api/auth", AuthController)
 app.use(require("./routes"))
 
-// Fix This Later
-app.post("/api/login", (req,res) => {
-  res.json({
-    message: "Successfully Signed In.",
-    token: "banana"
-  })
-})
+// // Fix This Later
+// app.post("/api/login", (req,res) => {
+//   res.json({
+//     message: "Successfully Signed In.",
+//     token: "banana"
+//   })
+// })
 
 
 app.listen(PORT, () => {

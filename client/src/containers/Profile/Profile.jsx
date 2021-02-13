@@ -85,19 +85,7 @@ const Profile = () => {
                     </form>
                 </div>
 
-                <button
-                    className="btn waves-effect waves-dark"
-                    type="submit"
-                    name="action"
-                    >
-                    Save Changes
-                </button>
-                <button
-                    className="btn waves-effect waves-dark red"
-                    name="action"
-                    >
-                    Delete
-                </button>
+            
             </div>  
         </>
     );
