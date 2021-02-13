@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
+import ImageUpload from "../../components/ImageUpload/ImageUpload";
 import axios from "axios";
 import './Profile.css';
 
@@ -16,6 +17,13 @@ const Profile = () => {
         <>
             <Navbar />
             <div className="container" id="profilePage">
+
+                <div className="row">
+                    <div className="col s6" id="profilePageColumn">
+                        <ImageUpload />
+                    </div>
+                    <div className="col s6" id="profilePageColumn"></div>
+                </div>
 
                 <div className="row">
                     <form>
