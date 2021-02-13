@@ -24,7 +24,7 @@ mongoose.connect(
   }
 );
 
-
+app.use(express.static("client/build"));
 
 // app.use("api/auth", AuthController)
 app.use(require("./routes"))
