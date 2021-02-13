@@ -24,7 +24,6 @@ mongoose.connect(
   }
 );
 
-app.use(express.static("client/build"));
 
 // app.use("api/auth", AuthController)
 app.use(require("./routes"))
@@ -37,9 +36,6 @@ app.post("/api/login", (req,res) => {
   })
 })
 
-app.get("*", (req,res) => {
-  res.sendFile(path.join(__dirname,"client/build/index.html"));
-});
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
