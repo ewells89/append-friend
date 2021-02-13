@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require("express");
 const mongoose = require("mongoose");
+const path =require("path");
 
 const app = express();
 
@@ -23,7 +24,7 @@ mongoose.connect(
   }
 );
 
-const AuthController = require("./controller/authController")
+
 
 // app.use("api/auth", AuthController)
 app.use(require("./routes"))
@@ -35,6 +36,10 @@ app.post("/api/login", (req,res) => {
     token: "banana"
   })
 })
+
+app.get("*", (req,res) => {
+  res.sendFile(path.join(__dirname,"client/build/index.html"));
+});
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
