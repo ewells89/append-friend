@@ -4,7 +4,7 @@ import "./SignIn.css";
 import { useHistory } from "react-router-dom";
 import jwt from "jsonwebtoken";
 
-const SignIn = ({setToken}) => {
+const SignIn = ({setToken, setAuthUser}) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -21,6 +21,7 @@ const SignIn = ({setToken}) => {
             console.log(err);
           }else{
             setToken(response.data.token);
+            setAuthUser(response.data.user);
             history.push("/developers");
           }
         });

@@ -10,14 +10,15 @@ import Profile from "./containers/Profile/Profile";
 import ProtectedRoute from "./components/ProtectedRoutes/ProtectRoute"
 function App() {
   const [token, setToken]= useState("");
+  const [authUser, setAuthUser] = useState("");
   return (
     <Router>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/signin" component={(props) => <SignIn {...props} setToken={setToken} />} />
-        <Route exact path="/signup" component={(props) => <SignUp {...props} setToken={setToken} />} />
-        <ProtectedRoute exact path="/developers" component={Developers} token={token}/>
-        <ProtectedRoute exact path="/profile" component={Profile} token={token}/>
+        <Route exact path="/signin" component={(props) => <SignIn {...props} setToken={setToken} setAuthUser= {setAuthUser} />} />
+        <Route exact path="/signup" component={(props) => <SignUp {...props} setToken={setToken} setAuthUser= {setAuthUser} />} />
+        <ProtectedRoute exact path="/developers" component={Developers} token={token} authUser ={authUser}/>
+        <ProtectedRoute exact path="/profile" component={Profile} token={token} authUser={authUser}/>
         {/* <Route exact path="/profile" component={Profile} /> */}
       </Switch>
       <Footer/>
