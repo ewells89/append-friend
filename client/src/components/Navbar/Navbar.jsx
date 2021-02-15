@@ -1,6 +1,7 @@
 import React from "react";
 import "./Navbar.css";
 import NavTabs from "../NavTabs/NavTabs.jsx";
+import {NavLink} from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -13,7 +14,7 @@ const Navbar = () => {
           </a>
           <ul className="left hide-on-med-and-down col">
             <li>
-              <a href="/developers">All Developers</a>
+              <NavLink to="/developers">All Developers</NavLink>
             </li>
             <li>
               <a href="/">Linked Developers</a>
@@ -27,7 +28,7 @@ const Navbar = () => {
 
       <ul className="sidenav" id="mobile-demo">
         <li>
-          <a href="/developers">All Developers</a>
+          <NavLink to="/developers">All Developers</NavLink>
         </li>
         <li>
           <a href="/">Linked Developers</a>

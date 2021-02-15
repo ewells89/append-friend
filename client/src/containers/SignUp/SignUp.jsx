@@ -5,7 +5,7 @@ import axios from "axios";
 import {useHistory} from "react-router-dom";
 import jwt from "jsonwebtoken";
 
-function SignUp({setToken}) {
+function SignUp({setToken, setAuthUser}) {
   const history = useHistory();
 
   const handleFormSubmit = (userData) => {
@@ -18,6 +18,7 @@ function SignUp({setToken}) {
             console.log(err);
           }else{
             setToken(response.data.token);
+            setAuthUser(response.data.user);
             history.push("/developers");
           }
         });

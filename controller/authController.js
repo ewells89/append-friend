@@ -22,13 +22,15 @@ module.exports = {
         experience: req.body.experience,
         followedUsers: req.body.followedUsers,
         usersFollowing: req.body.usersFollowing,
-
+        appRole:req.body.appRole,
       };
       User.create(newUser)
         .then((newUser) => {
             const token = jwt.sign({username:newUser.username}, process.env.JWT_SIGNATURE);
+            const userID= newUser._id;
             res.json({
-                token: token
+                token: token,
+                user: userID
             });
         })
         .catch((err) => {
@@ -44,8 +46,10 @@ module.exports = {
             console.log(result);
             if(result){
                 const token = jwt.sign({username:foundUser.username}, process.env.JWT_SIGNATURE, {expiresIn:60*60});
+                const userID= foundUser._id;
                 res.json({
-                    token: token
+                    token: token,
+                    user: userID
                 });
             }else{
                 res.status(401).end();
