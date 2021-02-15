@@ -10,7 +10,7 @@ const DevCards = ({username,name,gitHub,languages,phone,experience,location,occu
                 <div className="row">
                     <div className="col s5">
                         <div className="card-image">
-                            <img id="devCardDevImage" src=""/>
+                            <img id="devCardDevImage" src="" alt={name}/>
                         </div>
                     </div>
                 

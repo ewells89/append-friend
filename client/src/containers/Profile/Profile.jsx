@@ -3,7 +3,6 @@ import Navbar from "../../components/Navbar/Navbar";
 import ImageUpload from "../../components/ImageUpload/ImageUpload";
 import axios from "axios";
 import './Profile.css';
-import { set } from "mongoose";
 
 
 const Profile = (authUser) => {
@@ -35,10 +34,7 @@ const Profile = (authUser) => {
 
     };
     useEffect(() => {
-        // getDevs()
-        // setUser({authUser});
         getUserInfo();
-        
       }, []);
     
     const handleInputChange = e =>{
@@ -62,32 +58,32 @@ const Profile = (authUser) => {
                             
                             <div className="input-field">
                             <input id="name" type="text" className="validate" value={state.name} onChange={handleInputChange}/>
-                            {/* <label for="name">Name</label> */}
+                            <label className="active" for="name">Name</label>
                             </div>
 
                             <div className="input-field">
-                            <input id="email" type="text" className="validate"/>
-                            <label for="email">Email</label>
+                            <input id="email" type="text" className="validate" value={state.email} onChange={handleInputChange}/>
+                            <label className="active" for="email">Email</label>
                             </div>
 
                             <div className="input-field">
-                            <input id="phone" type="text" className="validate"/>
-                            <label for="phone">Phone</label>
+                            <input id="phone" type="text" className="validate" value={state.phone} onChange={handleInputChange}/>
+                            <label className="active" for="phone">Phone</label>
                             </div>
 
                             <div className="input-field">
-                            <input id="experience" type="text" className="validate"/>
-                            <label for="experience">Years of Experience</label>
+                            <input id="experience" type="text" className="validate" value={state.experience} onChange={handleInputChange}/>
+                            <label className="active" for="experience">Years of Experience</label>
                             </div>
                             
                             <div className="input-field">
-                            <input id="occupation" type="text" className="validate"/>
-                            <label for="occupation">Occupation/Job Title</label>
+                            <input id="occupation" type="text" className="validate" value={state.occupation} onChange={handleInputChange}/>
+                            <label className="active" for="occupation">Occupation/Job Title</label>
                             </div>
 
                             <div className="input-field">
-                            <input id="gitHub" type="text" className="validate"/>
-                            <label for="gitHub">GitHub URL </label>
+                            <input id="gitHub" type="text" className="validate" value={state.gitHub} onChange={handleInputChange}/>
+                            <label className="active" for="gitHub">GitHub URL </label>
                             </div>
 
                         </div>
@@ -95,19 +91,19 @@ const Profile = (authUser) => {
                         <div className="col s6" id="profilePageColumn">
                             <div className="row">
                                 <label>Role</label>
-                                    <select className="browser-default" id="appRole">
+                                    <select className="browser-default" id="appRole" value={state.appRole} onChange={handleInputChange}>
                                         <option value="" disabled selected>Choose your role</option>
-                                        <option value="1">Mentor</option>
-                                        <option value="2">Mentee</option>
-                                        <option value="3">Collaborator</option>
+                                        <option value="Mentor">Mentor</option>
+                                        <option value="Mentee">Mentee</option>
+                                        <option value="Collaborator">Collaborator</option>
                                     </select>
                             </div>
                             
                             <div className="row">
                                 <p>Languages</p>
                                     <div className="input-field">
-                                    <textarea id="languages" className="materialize-textarea"></textarea>
-                                    <label for="languages">Enter your regularly used languages here.</label>
+                                    <textarea id="languages" className="materialize-textarea" value={state.languages} onChange={handleInputChange}></textarea>
+                                    <label className="active" for="languages">Enter your regularly used languages here.</label>
                                     </div>
                             </div>
 
