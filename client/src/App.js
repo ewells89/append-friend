@@ -7,6 +7,7 @@ import Home from "./containers/Home/Home";
 import Footer from "./components/Footer/Footer";
 import Developers from "./containers/Developers/Developers";
 import Profile from "./containers/Profile/Profile";
+import EditProfile from "./containers/EditProfile/EditProfile";
 import ProtectedRoute from "./components/ProtectedRoutes/ProtectRoute"
 function App() {
   const [token, setToken]= useState("");
@@ -19,6 +20,7 @@ function App() {
         <Route exact path="/signup" component={(props) => <SignUp {...props} setToken={setToken} setAuthUser= {setAuthUser} />} />
         <ProtectedRoute exact path="/developers" component={Developers} token={token} authUser ={authUser}/>
         <ProtectedRoute exact path="/profile" component={Profile} token={token} authUser={authUser}/>
+        {/* <ProtectedRoute exact path="/editprofile" component={EditProfile} token={token} authUser={authUser}/> */}
         {/* <Route exact path="/profile" component={Profile} /> */}
       </Switch>
       <Footer/>
