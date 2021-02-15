@@ -3,16 +3,47 @@ import Navbar from "../../components/Navbar/Navbar";
 import ImageUpload from "../../components/ImageUpload/ImageUpload";
 import axios from "axios";
 import './Profile.css';
+import { set } from "mongoose";
 
 
-const Profile = () => {
-    const [user, setUser] = useState ([]);
+const Profile = (authUser) => {
+    const [state, setState] = useState({
+        username: "",
+        password: "",
+        name: "",
+        gitHub: "",
+        languages: [],
+        email: "",
+        phone: 0,
+        experience: 0,
+        location: "",
+        occupation: "",
+        appRole: "",
+        followedUsrs: [],
+        usersFollowing: [],
+      });
 
+    const getUserInfo = () => {
+        const queryURL= "api/developer/" + authUser.authUser;
+        console.log(queryURL); 
+        axios.get(queryURL).then((res) => {
+            console.log(res.data);
+            setState(res.data)
+        }).catch((err) => {
+            console.log(err);
+        });
+
+    };
     useEffect(() => {
         // getDevs()
+        // setUser({authUser});
+        getUserInfo();
+        
       }, []);
     
-
+    const handleInputChange = e =>{
+        setState({...state,[e.target.id]: e.target.value});
+    };
     return (
         <>
             <Navbar />
@@ -30,8 +61,8 @@ const Profile = () => {
                         <div className="col s6" id="profilePageColumn">
                             
                             <div className="input-field">
-                            <input id="name" type="text" className="validate"/>
-                            <label for="name">Name</label>
+                            <input id="name" type="text" className="validate" value={state.name} onChange={handleInputChange}/>
+                            {/* <label for="name">Name</label> */}
                             </div>
 
                             <div className="input-field">
@@ -62,7 +93,7 @@ const Profile = () => {
                         </div>
 
                         <div className="col s6" id="profilePageColumn">
-                            <div class="row">
+                            <div className="row">
                                 <label>Role</label>
                                     <select className="browser-default" id="appRole">
                                         <option value="" disabled selected>Choose your role</option>
@@ -72,10 +103,10 @@ const Profile = () => {
                                     </select>
                             </div>
                             
-                            <div class="row">
+                            <div className="row">
                                 <p>Languages</p>
-                                    <div class="input-field">
-                                    <textarea id="languages" class="materialize-textarea"></textarea>
+                                    <div className="input-field">
+                                    <textarea id="languages" className="materialize-textarea"></textarea>
                                     <label for="languages">Enter your regularly used languages here.</label>
                                     </div>
                             </div>

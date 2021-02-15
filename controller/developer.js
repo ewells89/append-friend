@@ -23,6 +23,12 @@ module.exports = {
       .then(() => res.sendStatus(200))
       .catch(() => res.sendStatus(500));
   },
+  getById: (req,res) => {
+    User.findOne({_id: req.params.id}).then((foundUser) =>{
+      console.log(foundUser);
+      res.json(foundUser);
+    });
+  },
   // addFollower: (req, res) => {
   //   User.findByIdAndUpdate(req.user._id, {
   //     $push: {
