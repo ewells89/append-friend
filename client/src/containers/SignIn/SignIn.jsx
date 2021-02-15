@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import "./SignIn.css";
 import { useHistory } from "react-router-dom";
 import jwt from "jsonwebtoken";
+import {NavLink} from "react-router-dom";
 
 const SignIn = ({setToken, setAuthUser}) => {
   const [username, setUsername] = useState("");
@@ -71,13 +72,13 @@ const SignIn = ({setToken, setAuthUser}) => {
           <button id="sign-in-button" className="waves-effect waves-dark btn">
             Sign in
           </button>
-          <button
-            href="/signup"
+          <NavLink
+            to="/signup"
             id="sign-up-button"
             className="waves-effect waves-dark btn"
           >
             Sign up
-          </button>
+          </NavLink>
         </form>
       </div>
     </>
