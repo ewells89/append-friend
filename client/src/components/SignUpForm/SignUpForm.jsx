@@ -96,7 +96,7 @@ const SignupForm = ({handleFormSubmit}) => {
               onChange={updateForm}
               value={state.phone}
             />
-            <label for="phone">Phone</label>
+            <label className="active" for="phone">Phone</label>
           </div>
           <div className="input-field col s6">
             <input
@@ -136,7 +136,7 @@ const SignupForm = ({handleFormSubmit}) => {
               onChange={updateForm}
               value={state.experience}
             />
-            <label for="experience">Years of Experience</label>
+            <label className="active" for="experience">Years of Experience</label>
           </div>
         </div>
         <button
