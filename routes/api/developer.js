@@ -14,6 +14,7 @@ router
 router
   .route("/:id")
   // .all(isAuth)
+  .get(developerController.getById)
   .delete(developerController.deleteById)
   .put(developerController.addFollower);
 
