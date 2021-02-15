@@ -19,7 +19,7 @@ const Profile = (authUser) => {
         location: "",
         occupation: "",
         appRole: "",
-        followedUsrs: [],
+        followedUsers: [],
         usersFollowing: [],
       });
 
