@@ -17,7 +17,13 @@ const Navbar = () => {
               <NavLink to="/developers">All Developers</NavLink>
             </li>
             <li>
-              <a href="/">Linked Developers</a>
+              <NavLink to="/">Linked Developers</NavLink>
+            </li>
+            <li>
+              <NavLink to="/">Liked Developers</NavLink>
+            </li>
+            <li>
+              <NavLink to="/">Developers Who Like You</NavLink>
             </li>
           </ul>
           <div className="right" id="search-div">
