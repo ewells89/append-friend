@@ -22,7 +22,7 @@ module.exports = {
         experience: req.body.experience,
         followedUsers: req.body.followedUsers,
         usersFollowing: req.body.usersFollowing,
-
+        appRole:req.body.appRole,
       };
       User.create(newUser)
         .then((newUser) => {
