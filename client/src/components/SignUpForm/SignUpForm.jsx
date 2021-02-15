@@ -13,7 +13,7 @@ const SignupForm = ({handleFormSubmit}) => {
     location: "",
     occupation: "",
     appRole: "",
-    followedUsrs: [],
+    followedUsers: [],
     usersFollowing: [],
   });
 
