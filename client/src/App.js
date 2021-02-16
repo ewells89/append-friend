@@ -26,7 +26,7 @@ function App() {
         <ProtectedRoute exact path="/linkeddevelopers" component={LinkedDevelopers} token={token} authUser ={authUser}/>
         <ProtectedRoute exact path="/developerswholikeyou" component={DevelopersWhoLikeYou} token={token} authUser ={authUser}/>
         <ProtectedRoute exact path="/profile" component={Profile} token={token} authUser={authUser}/>
-        {/* <ProtectedRoute exact path="/editprofile" component={EditProfile} token={token} authUser={authUser}/> */}
+        <ProtectedRoute exact path="/editprofile" component={EditProfile} token={token} authUser={authUser}/>
         {/* <Route exact path="/profile" component={Profile} /> */}
       </Switch>
       <Footer/>
