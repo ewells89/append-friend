@@ -20,12 +20,12 @@ const DevCards = ({username,name,gitHub,description,phone,experience,location,oc
                                 <p className="devCardP">{name}</p>
                             </div>
                             <div id="devCardDevOccupation">
-                                <p className="devCardP">Software Engineer
+                                <p className="devCardP">
                                     {occupation}
                                     </p>
                             </div>
                             <div id="devCardDevRole">
-                                <p className="devCardP">Mentor
+                                <p className="devCardP">
                                     {appRole}
                                     </p>
                             </div>

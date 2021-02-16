@@ -17,13 +17,13 @@ const Navbar = () => {
               <NavLink to="/developers">All Developers</NavLink>
             </li>
             <li>
-              <NavLink to="/">Linked Developers</NavLink>
+              <NavLink to="/linkeddevelopers">Linked Developers</NavLink>
             </li>
             <li>
-              <NavLink to="/">Liked Developers</NavLink>
+              <NavLink to="/likeddevelopers">Liked Developers</NavLink>
             </li>
             <li>
-              <NavLink to="/">Developers Who Like You</NavLink>
+              <NavLink to="/developerswholikeyou">Developers Who Like You</NavLink>
             </li>
           </ul>
           <div className="right" id="search-div">
