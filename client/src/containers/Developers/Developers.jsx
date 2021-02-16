@@ -26,7 +26,7 @@ const Developers = () => {
 
  const searchCallback = (searchInput) =>{
    const filterSearch = filterDevs.filter((user) => {
-      return user.name.includes(searchInput);
+      return user.name.toLowerCase().includes(searchInput);
     });
     setDevelopers(filterSearch);
 }
@@ -37,7 +37,7 @@ const Developers = () => {
       <div className="container">
         <div className="row">
           {developers.map((developer) => {
-            return <DevCards {...developer} key={developer.username} />;
+            return <DevCards {...developer} key={developer._id} />;
           })}
         </div>
       </div>

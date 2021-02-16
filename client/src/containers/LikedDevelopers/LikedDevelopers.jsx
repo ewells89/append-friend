@@ -3,27 +3,36 @@ import Navbar from "../../components/Navbar/Navbar";
 import DevCards from "../../components/DevCards/DevCards";
 import axios from "axios";
 
-const LinkedDevelopers = () => {
+const LinkedDevelopers = (authUser) => {
+
   const [developers, setDevelopers] = useState([]);
 
-  useEffect(() => {
-    getDevs()
-    // getLikedDevs()
-  }, []);
-
-  // const getLikedDevs = () => {};
-
-  const getDevs = () => {
-    axios
-    .get("/api/developer")
-    .then((response) => {
-      console.log(response.data);
-      setDevelopers(response.data);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  const getUserInfo = () => {
+      const queryOne = axios.get("api/developer/" + authUser.authUser);
+      const queryTwo = axios.get("api/developer/");
+      axios.all([queryOne, queryTwo]).then(
+        axios.spread((...responses) => {
+          const loggedUser = responses[0].data;
+          const allUsers = responses[1].data;
+          let i = 0;
+          let likedUsers = [];
+          for(i; i < loggedUser.followedUsers.length; i++) {
+            allUsers.forEach((all) => {
+              if(all._id === loggedUser.followedUsers[i]){
+                likedUsers.push(all);
+              }
+            });
+          }
+          setDevelopers(likedUsers);
+        })
+        ).catch((err) => {
+          console.log(err);
+      });
   };
+
+  useEffect(() => {
+    getUserInfo();
+  }, []);
 
   return (
     <>
@@ -31,7 +40,7 @@ const LinkedDevelopers = () => {
       <div className="container">
         <div className="row">
           {developers.map((developer) => {
-            return <DevCards {...developer} key={developer.username} />;
+            return <DevCards {...developer} key={developer._id} />;
           })}
         </div>
       </div>
