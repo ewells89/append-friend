@@ -31,7 +31,7 @@ const LikedDevelopers = () => {
       <div className="container">
         <div className="row">
           {developers.map((developer) => {
-            return <DevCards {...developer} key={developer.username} />;
+            return <DevCards {...developer} key={developer._id} />;
           })}
         </div>
       </div>
