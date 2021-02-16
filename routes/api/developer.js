@@ -16,7 +16,7 @@ router
   // .all(isAuth)
   .get(developerController.getById)
   .delete(developerController.deleteById)
-  .put(developerController.addFollower);
+  .put(developerController.editById);
 
 module.exports = router;
 

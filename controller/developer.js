@@ -29,6 +29,18 @@ module.exports = {
       res.json(foundUser);
     });
   },
+  deleteById: (req,res) => {
+    User.findByIdAndDelete(req.params.id).then((result) => {
+      res.json(result);
+    });
+  },
+  editById: (req,res) => {
+    User.findByIdAndUpdate(req.params.id, req.body, {new:true}).then(
+      (updatedUser) => {
+        res.json(updatedUser);
+      }
+    );
+  },
   // addFollower: (req, res) => {
   //   User.findByIdAndUpdate(req.user._id, {
   //     $push: {
@@ -44,25 +56,25 @@ module.exports = {
   //     });
   //   });
   // },
-  addFollower: async (req, res) => {
-    try {
-      await User.findByIdAndUpdate(req.user._id, {
-        $push: {
-          followedUsers: req.params.id,
-        },
-      });
+  // addFollower: async (req, res) => {
+  //   try {
+  //     await User.findByIdAndUpdate(req.user._id, {
+  //       $push: {
+  //         followedUsers: req.params.id,
+  //       },
+  //     });
 
-      await User.findByIdAndUpdate(req.params.id, {
-        $push: {
-          usersFollowing: req.user._id,
-        },
-      });
+  //     await User.findByIdAndUpdate(req.params.id, {
+  //       $push: {
+  //         usersFollowing: req.user._id,
+  //       },
+  //     });
       
-      res.sendStatus(200);
-    } catch (error) {
-      res.sendStatus(500);
-    }
-  },
+  //     res.sendStatus(200);
+  //   } catch (error) {
+  //     res.sendStatus(500);
+  //   }
+  // },
 };
 
 //get all users
