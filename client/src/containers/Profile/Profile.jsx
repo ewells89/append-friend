@@ -48,7 +48,7 @@ const Profile = (authUser) => {
       <div className="container" id="profilePage">
         <div className="row">
           <div className="col s6" id="profilePageColumn">
-            <ImageUpload />
+            <img id="profilePagePicture" src="" alt=""/>
           </div>
           <div className="col s6" id="profilePageColumn"></div>
         </div>
@@ -57,7 +57,7 @@ const Profile = (authUser) => {
           <form>
             <div className="col s6" id="profilePageColumn">
               <div className="input-field">
-                <input
+                <input disabled
                   id="name"
                   type="text"
                   className="validate"
@@ -70,7 +70,7 @@ const Profile = (authUser) => {
               </div>
 
               <div className="input-field">
-                <input
+                <input disabled
                   id="email"
                   type="text"
                   className="validate"
@@ -83,7 +83,7 @@ const Profile = (authUser) => {
               </div>
 
               <div className="input-field">
-                <input
+                <input disabled
                   id="phone"
                   type="text"
                   className="validate"
@@ -96,7 +96,7 @@ const Profile = (authUser) => {
               </div>
 
               <div className="input-field">
-                <input
+                <input disabled
                   id="experience"
                   type="text"
                   className="validate"
@@ -109,7 +109,7 @@ const Profile = (authUser) => {
               </div>
 
               <div className="input-field">
-                <input
+                <input disabled
                   id="occupation"
                   type="text"
                   className="validate"
@@ -122,7 +122,7 @@ const Profile = (authUser) => {
               </div>
 
               <div className="input-field">
-                <input
+                <input disabled
                   id="gitHub"
                   type="text"
                   className="validate"
@@ -138,7 +138,7 @@ const Profile = (authUser) => {
             <div className="col s6" id="profilePageColumn">
               <div className="row">
                 <label>Role</label>
-                <select
+                <select disabled
                   className="browser-default"
                   id="appRole"
                   value={state.appRole}
@@ -156,7 +156,7 @@ const Profile = (authUser) => {
               <div className="row">
                 <p>Languages</p>
                 <div className="input-field">
-                  <textarea
+                  <textarea  disabled
                     id="languages"
                     className="materialize-textarea"
                     value={state.languages}
@@ -168,14 +168,16 @@ const Profile = (authUser) => {
                 </div>
               </div>
             </div>
-            <NavLink
-              to="/editprofile"
-              id="edit-profile-button"
-              className="waves-effect waves-dark btn"
-            >
-              Edit Profile
-            </NavLink>
+           
           </form>
+        </div>
+        <div className="row" id="profilePageButtons">
+            <NavLink
+                to="/editprofile"
+                id="edit-profile-button"
+                className="waves-effect waves-dark btn"
+                >Edit Profile
+            </NavLink>
         </div>
       </div>
     </>
