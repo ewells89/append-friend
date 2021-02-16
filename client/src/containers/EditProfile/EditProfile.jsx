@@ -205,10 +205,12 @@ const EditProfile = (authUser) => {
                 </div>
               </div>
             </div>
+            <div className="center-align" id="button-div">
             <button id="save-button" className="waves-effect waves-dark btn">
               Save Changes
             </button>
             <button id="delete-button" className="waves-effect red waves-dark btn" onClick={handleDeleteProfile}>Delete Profile</button>
+            </div>
           </form>
         </div>
       </div>
