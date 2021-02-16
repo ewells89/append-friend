@@ -1,15 +1,19 @@
 #devCardBody {
     width:350px;
     height: 450px;
-    background-color:hotpink;
+    background-color:thistle;
     padding:10px;
+}
+
+.devCardP {
+    margin:7px !important
 }
 
 #devCardDevImage {
     height:100px;
     width:100px;
     margin-right:10;
-    background-color:yellow;
+    background-color:ghostwhite;
     border-radius:10px;
 }
 
@@ -21,15 +25,28 @@
     right:0;
     background-color:white;
     font-weight:bold;
+    height:25px;
+    padding-left:5px;
 }
 
-
+#devCardDevOccupation {
+    right:0;
+    font-weight:bold;
+    height:25px;
+    padding-left:5px;
+}
+#devCardDevRole {
+    right:0;
+    font-style:italic;
+    height:25px;
+    padding-left:5px;
+}
 
 #devCardDevDescription {
     background-color:white;
     margin:10px;
     padding:10px;
-    height:150px;
+    height:290px;
 
 }
 
@@ -47,5 +64,5 @@
 #devCardLikeButton {
     position:absolute;
     right:5px;
-    bottom:0px;
+    bottom:5px;
 }
