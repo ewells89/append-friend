@@ -29,11 +29,11 @@ module.exports = {
       res.json(foundUser);
     });
   },
-  deleteById: (req,res) => {
-    User.findByIdAndDelete(req.params.id).then((result) => {
-      res.json(result);
-    });
-  },
+  // deleteById: (req,res) => {
+  //   User.findByIdAndDelete(req.params.id).then((result) => {
+  //     res.json(result);
+  //   });
+  // },
   editById: (req,res) => {
     User.findByIdAndUpdate(req.params.id, req.body, {new:true}).then(
       (updatedUser) => {

@@ -5,3 +5,13 @@
 #profilePageColumn {
     padding:0px 100px;
 }
+
+#save-button{
+    margin-left:10px;
+    margin-right:10px;
+}
+
+#delete-button{
+    margin-left:10px;
+    margin-right:10px;
+}
