@@ -70,6 +70,15 @@ const EditProfile = (authUser) => {
   const handleInputChange = (e) => {
     setState({ ...state, [e.target.id]: e.target.value });
   };
+
+  const handleDeleteProfile = (e) => {
+    e.preventDefault();
+    const queryURL = "api/developer/" + authUser.authUser;
+    console.log(queryURL);
+    axios.delete(queryURL).then(() => {
+      history.push("/");
+    })
+  }
   return (
     <>
       <Navbar />
@@ -199,6 +208,7 @@ const EditProfile = (authUser) => {
             <button id="save-button" className="waves-effect waves-dark btn">
               Save Changes
             </button>
+            <button id="delete-button" className="waves-effect red waves-dark btn" onClick={handleDeleteProfile}>Delete Profile</button>
           </form>
         </div>
       </div>
