@@ -1,9 +1,10 @@
 import React from "react";
 import "./Navbar.css";
 import NavTabs from "../NavTabs/NavTabs.jsx";
-import {NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ searchCallBack }) => {
+  
   return (
     <>
       <NavTabs />
@@ -27,7 +28,12 @@ const Navbar = () => {
             </li>
           </ul>
           <div className="right" id="search-div">
-                <input id="search" type="search" placeholder="Search Developers..."/>
+            <input
+              id="search-bar"
+              type="search"
+              placeholder="Search Developers..."
+              onChange={(e) => searchCallBack(e.target.value)}
+            />
           </div>
         </div>
       </nav>

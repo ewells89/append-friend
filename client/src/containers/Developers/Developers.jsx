@@ -5,6 +5,7 @@ import axios from "axios";
 
 const Developers = () => {
   const [developers, setDevelopers] = useState([]);
+  const [filterDevs, setFilterDevs] = useState([]);
 
   useEffect(() => {
     getDevs()
@@ -16,15 +17,23 @@ const Developers = () => {
     .then((response) => {
       console.log(response.data);
       setDevelopers(response.data);
+      setFilterDevs(response.data);
     })
     .catch((err) => {
       console.log(err);
     });
   };
 
+ const searchCallback = (searchInput) =>{
+   const filterSearch = filterDevs.filter((user) => {
+      return user.name.includes(searchInput);
+    });
+    setDevelopers(filterSearch);
+}
+
   return (
     <>
-      <Navbar />
+      <Navbar searchCallBack={searchCallback}/>
       <div className="container">
         <div className="row">
           {developers.map((developer) => {
