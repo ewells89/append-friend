@@ -3,6 +3,7 @@ import Navbar from "../../components/Navbar/Navbar";
 // import ImageUpload from "../../components/ImageUpload/ImageUpload";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
+import ProfileFields from "../../containers/ProfilePage/ProfilePage"
 import "./Profile.css";
 
 const Profile = (authUser) => {
@@ -46,133 +47,56 @@ const Profile = (authUser) => {
   return (
     <>
       <Navbar />
-      <div className="container" id="profilePage">
-        <div className="row">
-          <div className="col s6" id="profilePageColumn">
-            <img id="profilePagePicture" src="" alt=""/>
-          </div>
-          <div className="col s6" id="profilePageColumn"></div>
-        </div>
+      <div className="container">
+      <div className="row">
+        <div className="col s6">
+          <div className="row">
+            <div className="col s12 m6">
+              <div className="card">
+                <div className="card-image">
+                  <img src="https://images2.minutemediacdn.com/image/upload/c_fill,g_auto,h_1248,w_2220/v1555347235/shape/mentalfloss/silence_of_the_lambs_0.jpg?itok=alannxlk" />
+                  <span className="card-title" id="name">
+                    {state.name}
+                  </span>
+                </div>
 
-        <div className="row">
-          <form>
-            <div className="col s6" id="profilePageColumn">
-              <div className="input-field">
-                <input disabled
-                  id="name"
-                  type="text"
-                  className="validate"
-                  value={state.name}
-                  onChange={handleInputChange}
-                />
-                <label className="active" for="name">
-                  Name
-                </label>
-              </div>
-
-              <div className="input-field">
-                <input disabled
-                  id="email"
-                  type="text"
-                  className="validate"
-                  value={state.email}
-                  onChange={handleInputChange}
-                />
-                <label className="active" for="email">
-                  Email
-                </label>
-              </div>
-
-              <div className="input-field">
-                <input disabled
-                  id="phone"
-                  type="text"
-                  className="validate"
-                  value={state.phone}
-                  onChange={handleInputChange}
-                />
-                <label className="active" for="phone">
-                  Phone
-                </label>
-              </div>
-
-              <div className="input-field">
-                <input disabled
-                  id="experience"
-                  type="text"
-                  className="validate"
-                  value={state.experience}
-                  onChange={handleInputChange}
-                />
-                <label className="active" for="experience">
-                  Years of Experience
-                </label>
-              </div>
-
-              <div className="input-field">
-                <input disabled
-                  id="occupation"
-                  type="text"
-                  className="validate"
-                  value={state.occupation}
-                  onChange={handleInputChange}
-                />
-                <label className="active" for="occupation">
-                  Occupation/Job Title
-                </label>
-              </div>
-
-              <div className="input-field">
-                <input disabled
-                  id="gitHub"
-                  type="text"
-                  className="validate"
-                  value={state.gitHub}
-                  onChange={handleInputChange}
-                />
-                <label className="active" for="gitHub">
-                  GitHub URL{" "}
-                </label>
-              </div>
-            </div>
-
-            <div className="col s6" id="profilePageColumn">
-              <div className="row">
-                <label>Role</label>
-                <select disabled
-                  className="browser-default"
-                  id="appRole"
-                  value={state.appRole}
-                  onChange={handleInputChange}
-                >
-                  <option value="" disabled selected>
-                    Choose your role
-                  </option>
-                  <option value="Mentor">Mentor</option>
-                  <option value="Mentee">Mentee</option>
-                  <option value="Collaborator">Collaborator</option>
-                </select>
-              </div>
-
-              <div className="row">
-                <p>Languages</p>
-                <div className="input-field">
-                  <textarea  disabled
-                    id="languages"
-                    className="materialize-textarea"
-                    value={state.languages}
-                    onChange={handleInputChange}
-                  ></textarea>
-                  <label className="active" for="languages">
-                    Enter your regularly used languages here.
-                  </label>
+                <div className="card-content">
+                <ul className="collection">
+                <li className="collection-item">{state.appRole}</li>
+                <li className="collection-item">{state.occupation}</li>
+                <li className="collection-item">{state.experience} years</li>
+                <li className="collection-item">{state.location}</li>
+              </ul>
                 </div>
               </div>
             </div>
-           
-          </form>
+          </div>
+          <div className="row">
+            <div className="col s12 m6">
+              <ul className="collection">
+                <li className="collection-item"><a href={state.gitHub} target="_blank">Git Hub</a></li>
+                <li className="collection-item">{state.email}</li>
+                <li className="collection-item">{state.phone}</li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div className="row" id="profilePageButtons">
+
+        <div className="col s6">
+          <div className="col s12">
+            <h6 className="header">About Me:</h6>
+            <div className="card horizontal">
+              <div className="card-stacked">
+                <div className="card-content">
+                  <p>{state.languages}</p>
+                </div>
+                <div className="card-action">
+                  <a href="">This is a link</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="row" id="profilePageButtons">
             <NavLink
                 to="/editprofile"
                 id="edit-profile-button"
@@ -180,7 +104,9 @@ const Profile = (authUser) => {
                 >Edit Profile
             </NavLink>
         </div>
+        </div>
       </div>
+    </div>
     </>
   );
 };

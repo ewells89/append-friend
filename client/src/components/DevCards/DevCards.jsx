@@ -2,7 +2,7 @@ import React from 'react';
 import './DevCards.css';
 // import PropTypes from "prop-types";
 
-const DevCards = ({username,name,gitHub,description,phone,experience,location,occupation,appRole,}) => {
+const DevCards = ({username,name,gitHub,description,phone,experience,location,occupation,appRole}) => {
     return (
         
         <div className="col s4">
