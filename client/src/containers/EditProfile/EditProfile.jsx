@@ -88,7 +88,7 @@ const EditProfile = (authUser) => {
   const onDrop = (pictureFiles,pictureDataURLs) => {
      console.log(pictureFiles);
      setPictures(pictureFiles);
-    console.log(pictures);
+    // console.log(pictures);
   }
 
   /* Maybe: Build in this function to the handleFormSubmit function & 
@@ -104,7 +104,10 @@ const EditProfile = (authUser) => {
     axios.post("https://api.cloudinary.com/v1_1/kayilan/image/upload", fd)
     .then(res => {
       console.log(res);
-    })
+    }).catch((err) => {
+      console.log(err);
+    });
+  
   }
 
   return (
@@ -256,8 +259,7 @@ const EditProfile = (authUser) => {
                 </div>
               </div>
             </div>
-          </form>
-        </div>
+            <div className="col s12">
         <div className="row">
           <div className="col s6" id="profilePageColumn">
             <button id="delete-button" className="waves-effect red waves-dark btn" onClick={handleDeleteProfile}>
@@ -269,6 +271,9 @@ const EditProfile = (authUser) => {
             Save Changes
           </button>
           </div>
+        </div>
+        </div>
+          </form>
         </div>
       </div>
     </>
