@@ -50,7 +50,7 @@ const Profile = (authUser) => {
       <div className="row">
         <div className="col s6">
           <div className="row">
-            <div className="col s12 m6">
+            <div className="col s12">
               <div className="card">
                 <div className="card-image">
                   <img src="https://images2.minutemediacdn.com/image/upload/c_fill,g_auto,h_1248,w_2220/v1555347235/shape/mentalfloss/silence_of_the_lambs_0.jpg?itok=alannxlk" />
@@ -61,17 +61,17 @@ const Profile = (authUser) => {
 
                 <div className="card-content">
                 <ul className="collection">
-                <li className="collection-item">{state.appRole}</li>
-                <li className="collection-item">{state.occupation}</li>
-                <li className="collection-item">{state.experience} years</li>
-                <li className="collection-item">{state.location}</li>
+                <li className="collection-item" placeholder="App Role:">Role: {state.appRole}</li>
+                <li className="collection-item">Occupation: {state.occupation}</li>
+                <li className="collection-item">Experience: {state.experience} years</li>
+                <li className="collection-item">Location: {state.location}</li>
               </ul>
                 </div>
               </div>
             </div>
           </div>
           <div className="row">
-            <div className="col s12 m6">
+            <div className="col s12">
               <ul className="collection">
                 <li className="collection-item">{state.gitHub}</li>
                 <li className="collection-item">{state.email}</li>
