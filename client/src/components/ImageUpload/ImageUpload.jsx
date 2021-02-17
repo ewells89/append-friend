@@ -6,7 +6,7 @@ class ImageUpload extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { pictures: [] };
+        this.state = { pictures: {}};
         this.onDrop = this.onDrop.bind(this);
     }
 
