@@ -35,6 +35,7 @@ const Profile = (authUser) => {
         console.log(err);
       });
   };
+  
   useEffect(() => {
     getUserInfo();
   }, []);

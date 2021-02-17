@@ -14,9 +14,8 @@ const LinkedDevelopers = (authUser) => {
         axios.spread((...responses) => {
           const loggedUser = responses[0].data;
           const allUsers = responses[1].data;
-          let i = 0;
-          let likedUsers = [];
-          for(i; i < loggedUser.followedUsers.length; i++) {
+          const likedUsers = [];
+          for(let i = 0; i < loggedUser.followedUsers.length; i++) {
             allUsers.forEach((all) => {
               if(all._id === loggedUser.followedUsers[i]){
                 likedUsers.push(all);
