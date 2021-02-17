@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
-import ImageUpload from "../../components/ImageUpload/ImageUpload";
+// import ImageUpload from "../../components/ImageUpload/ImageUpload";
 import axios from "axios";
 import {useHistory} from "react-router-dom";
 import "./EditProfile.css";
+import ImageUploader from 'react-images-upload';
+
+/**** STOP HERE ****/
 
 const EditProfile = (authUser) => {
   const [state, setState] = useState({
@@ -21,6 +24,8 @@ const EditProfile = (authUser) => {
     followedUsers: [],
     usersFollowing: [],
   });
+
+  const [pictures,setPictures] = useState([]);
 
   const history = useHistory();
 
@@ -79,14 +84,60 @@ const EditProfile = (authUser) => {
       history.push("/");
     })
   }
+
+  const onDrop = (pictureFiles,pictureDataURLs) => {
+     console.log(pictureFiles);
+     setPictures(pictureFiles);
+    console.log(pictures);
+  }
+
+  /* Maybe: Build in this function to the handleFormSubmit function & 
+     remove image upload button. */
+  const handleImageUpload = () => {
+    const fd = new FormData();
+    /* TODO: Figure out how to pass down the authUser value on state 
+    from app.js and use it as part of the input parameters to the axios 
+    call. We can use this value to retrieve the image from storage. */
+    fd.append("file",pictures)
+    fd.append("upload_preset","ml_default")
+    /* TODO: Add API Post route here. */
+    axios.post("https://api.cloudinary.com/v1_1/kayilan/image/upload", fd)
+    .then(res => {
+      console.log(res);
+    })
+  }
+
   return (
     <>
       <Navbar />
       <div className="container" id="profilePage">
         <div className="row">
           <div className="col s6" id="profilePageColumn">
-            <ImageUpload />
+            
+            <ImageUploader
+                  withIcon={true}
+                  buttonText='Choose image'
+                  onChange={onDrop}
+                  imgExtension={['.jpg', '.gif', '.png']}
+                  maxFileSize={5242880}
+                  singleImage={true}
+                  withPreview={true}
+              />
+            
+            
+
+
+
+            <div className="row" id="profilePageColumnUpload">
+              <button 
+                id="upload-button" 
+                className="waves-effect grey darken-3 waves-dark btn"
+                onClick={handleImageUpload}>
+                Upload
+              </button>
+            </div>
           </div>
+
           <div className="col s6" id="profilePageColumn"></div>
         </div>
 
@@ -205,13 +256,19 @@ const EditProfile = (authUser) => {
                 </div>
               </div>
             </div>
-            <div className="center-align" id="button-div">
-            <button id="save-button" className="waves-effect waves-dark btn">
-              Save Changes
-            </button>
-            <button id="delete-button" className="waves-effect red waves-dark btn" onClick={handleDeleteProfile}>Delete Profile</button>
-            </div>
           </form>
+        </div>
+        <div className="row">
+          <div className="col s6" id="profilePageColumn">
+            <button id="delete-button" className="waves-effect red waves-dark btn" onClick={handleDeleteProfile}>
+              Delete Profile
+            </button>
+          </div>
+          <div className="col s6" id="profilePageColumnSave">
+          <button id="save-button" className="waves-effect waves-dark btn">
+            Save Changes
+          </button>
+          </div>
         </div>
       </div>
     </>

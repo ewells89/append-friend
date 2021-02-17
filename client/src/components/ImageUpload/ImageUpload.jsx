@@ -11,6 +11,7 @@ class ImageUpload extends React.Component {
     }
 
     onDrop(pictureFiles, pictureDataURLs) {
+        console.log(pictureFiles);
         this.setState({
             pictures: pictureFiles
         });
