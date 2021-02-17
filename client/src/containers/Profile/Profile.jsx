@@ -3,7 +3,6 @@ import Navbar from "../../components/Navbar/Navbar";
 // import ImageUpload from "../../components/ImageUpload/ImageUpload";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
-import ProfileFields from "../../containers/ProfilePage/ProfilePage"
 import "./Profile.css";
 
 const Profile = (authUser) => {
@@ -74,7 +73,7 @@ const Profile = (authUser) => {
           <div className="row">
             <div className="col s12 m6">
               <ul className="collection">
-                <li className="collection-item"><a href={state.gitHub} target="_blank">Git Hub</a></li>
+                <li className="collection-item">{state.gitHub}</li>
                 <li className="collection-item">{state.email}</li>
                 <li className="collection-item">{state.phone}</li>
               </ul>
