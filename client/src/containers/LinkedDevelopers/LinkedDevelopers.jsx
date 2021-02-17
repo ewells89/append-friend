@@ -3,26 +3,38 @@ import Navbar from "../../components/Navbar/Navbar";
 import DevCards from "../../components/DevCards/DevCards";
 import axios from "axios";
 
-const LikedDevelopers = () => {
+const LikedDevelopers = (authUser) => {
   const [developers, setDevelopers] = useState([]);
 
   useEffect(() => {
-    getDevs()
-    // getLinkedDevs()
+    getUserInfo();
   }, []);
 
-  // const getLinkedDevs = () => {};
-
-  const getDevs = () => {
+  const getUserInfo = () => {
+    const queryOne = axios.get("api/developer/" + authUser.authUser);
+    const queryTwo = axios.get("api/developer/");
     axios
-    .get("/api/developer")
-    .then((response) => {
-      console.log(response.data);
-      setDevelopers(response.data);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+      .all([queryOne, queryTwo])
+      .then(
+        axios.spread((...responses) => {
+          const loggedUser = responses[0].data;
+          const allUsers = responses[1].data;
+          const linkedUsers = [];
+          for (let i = 0; i < loggedUser.followedUsers.length; i++) {
+            for(let n = 0; n < allUsers.length; n++) {
+              for(let x = 0; x < allUsers[n].followedUsers.length; x++) {
+                if (allUsers[n].followedUsers[x] === loggedUser._id && loggedUser.followedUsers[i] === allUsers[n]._id) {
+                  linkedUsers.push(allUsers[n]);
+                }
+              }
+            };
+          }
+          setDevelopers(linkedUsers);
+        })
+      )
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
