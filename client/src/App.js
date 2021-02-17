@@ -12,6 +12,8 @@ import DevelopersWhoLikeYou from "./containers/DevelopersWhoLikeYou/DevelopersWh
 import Profile from "./containers/Profile/Profile";
 import EditProfile from "./containers/EditProfile/EditProfile";
 import ProtectedRoute from "./components/ProtectedRoutes/ProtectRoute"
+import ProfilePage from "./containers/ProfilePage/ProfilePage"
+
 function App() {
   const [token, setToken]= useState("");
   const [authUser, setAuthUser] = useState("");
@@ -27,7 +29,7 @@ function App() {
         <ProtectedRoute exact path="/developerswholikeyou" component={DevelopersWhoLikeYou} token={token} authUser ={authUser}/>
         <ProtectedRoute exact path="/profile" component={Profile} token={token} authUser={authUser}/>
         <ProtectedRoute exact path="/editprofile" component={EditProfile} token={token} authUser={authUser}/>
-        {/* <Route exact path="/profile" component={Profile} /> */}
+        <Route exact path="/profilepage" component={ProfilePage} />
       </Switch>
       <Footer/>
     </Router>
