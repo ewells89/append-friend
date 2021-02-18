@@ -32,14 +32,25 @@ const DevCards = ({username,name,gitHub,description,phone,experience,location,oc
                         </div>
                     </div>
                 </div>
-                <div className="row">
+                <div className="row" id="devCardRow">
                     <div className="card-content" id="devCardDevDescription">
-                        <p>Description of the developer or some other content will go here.
+                        <p>
                             {description}
                         </p>
-                        <a className="btn-floating waves-effect waves-light grey lighten-3" id="devCardLikeButton"><i className="material-icons pink-text text-accent-1">favorite</i></a>
                     </div>
                 </div>
+                <div className="row" id="devCardRow">
+                    <div className="col s6">
+                        <button class="waves-effect waves-light white-text grey  btn-small">Profile</button>
+                    </div>
+                    <div className="col s6" id="devCardButtonLike">
+                        <button className="waves-effect waves-light grey btn-small">
+                            <i className="material-icons">favorite</i>
+                        </button>
+                    </div>
+                </div>
+
+
             </div>
         </div>
     );
