@@ -56,25 +56,25 @@ module.exports = {
   //     });
   //   });
   // },
-  // addFollower: async (req, res) => {
-  //   try {
-  //     await User.findByIdAndUpdate(req.user._id, {
-  //       $push: {
-  //         followedUsers: req.params.id,
-  //       },
-  //     });
+  addFollower: async (req, res) => {
+    try {
+      await User.findByIdAndUpdate(req.user._id, {
+        $push: {
+          followedUsers: req.params.id,
+        },
+      });
 
-  //     await User.findByIdAndUpdate(req.params.id, {
-  //       $push: {
-  //         usersFollowing: req.user._id,
-  //       },
-  //     });
+      await User.findByIdAndUpdate(req.params.id, {
+        $push: {
+          usersFollowing: req.user._id,
+        },
+      });
       
-  //     res.sendStatus(200);
-  //   } catch (error) {
-  //     res.sendStatus(500);
-  //   }
-  // },
+      res.sendStatus(200);
+    } catch (error) {
+      res.sendStatus(500);
+    }
+  },
 };
 
 //get all users

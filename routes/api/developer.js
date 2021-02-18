@@ -18,6 +18,11 @@ router
   .delete(developerController.deleteById)
   .put(developerController.editById);
 
+router
+  .route("/like/:id")
+  .put(developerController.addFollower);
+
+
 module.exports = router;
 
 // function isAuth(req, res, next) {
