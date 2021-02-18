@@ -29,16 +29,19 @@ function SignUp({setToken, setAuthUser}) {
   };
 
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col s12">
-          <h1>Register a new account</h1>
+    <>
+    <h3 id="appTitle" className="center">.<span id="titleAppend">append</span>(<span id="titleFriend">friend</span>)</h3>
+      <div className="container" id="signUpContainer">
+        <div className="row">
+          <div className="col s12">
+            <h4>Please enter your account details below.</h4>
+          </div>
+        </div>
+        <div className="row">
+          <SignupForm handleFormSubmit={handleFormSubmit} />
         </div>
       </div>
-      <div className="row">
-        <SignupForm handleFormSubmit={handleFormSubmit} />
-      </div>
-    </div>
+    </>
   );
 }
 
