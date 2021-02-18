@@ -25,9 +25,10 @@ const developerSchema = new Schema ({
         trim: true,
         
     },
-    languages: 
-        // array
-        [{type:String}],
+    about: {
+        type: String,
+        default: ""
+    },
     email:{
         type:String,
         unique: true,
@@ -60,6 +61,10 @@ const developerSchema = new Schema ({
         type: mongoose.Schema.Types.ObjectId,
         ref: "developerSchema",
     }],
+    imgURL: {
+        type: String,
+        default: "",
+    },
 });
 developerSchema.pre("save", function(next){
     this.username = this.username.toLowerCase();
