@@ -71,7 +71,7 @@ const DeveloperProfile = () => {
               <div className="col s12">
                 <div className="card">
                   <div className="card-image">
-                    <img src="https://images2.minutemediacdn.com/image/upload/c_fill,g_auto,h_1248,w_2220/v1555347235/shape/mentalfloss/silence_of_the_lambs_0.jpg?itok=alannxlk" />
+                    <img src={state.imgURL} />
                     <span className="card-title" id="name">
                       {state.name}
                     </span>
