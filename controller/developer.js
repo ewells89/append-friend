@@ -58,15 +58,15 @@ module.exports = {
   // },
   addFollower: async (req, res) => {
     try {
-      await User.findByIdAndUpdate(req.user._id, {
-        $push: {
-          followedUsers: req.params.id,
+      await User.findByIdAndUpdate(req.params.id, {
+        $addToSet: {
+          followedUsers: req.body,
         },
       });
 
-      await User.findByIdAndUpdate(req.params.id, {
-        $push: {
-          usersFollowing: req.user._id,
+      await User.findByIdAndUpdate(req.body, {
+        $addToSet: {
+          usersFollowing: req.params.id,
         },
       });
       

@@ -1,12 +1,25 @@
 import React from 'react';
 import './DevCards.css';
 import {NavLink} from "react-router-dom";
+import axios from 'axios';
 // import PropTypes from "prop-types";
 
 const DevCards = ({_id,username,name,gitHub,description,phone,experience,location,occupation,appRole,imgURL}) => {
-    
+
+    const likeButton = (id) => {
+        const storedID = localStorage.getItem("loggedUserID");
+        const queryURL = "/api/developer/like/" + storedID;
+        axios
+          .put(queryURL, {_id})
+          .then((res) => {
+            console.log(res.data);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+    };
+
     return (
-        
         <div className="col s4">
             <div className="card" id="devCardBody">
                 <div className="row">
@@ -46,7 +59,7 @@ const DevCards = ({_id,username,name,gitHub,description,phone,experience,locatio
                         <NavLink to={`/developerprofile/${_id}`} ><button className="waves-effect waves-light white-text grey  btn-small">Profile</button></NavLink>
                     </div>
                     <div className="col s6" id="devCardButtonLike">
-                        <button className="waves-effect waves-light grey btn-small">
+                        <button className="waves-effect waves-light grey btn-small" onClick={()=>{likeButton(_id)}}>
                             <i className="material-icons">favorite</i>
                         </button>
                     </div>
