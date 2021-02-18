@@ -1,6 +1,51 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
+import Navbar from "../../components/Navbar/Navbar";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 
 const DeveloperProfile = () => {
+  let {id} = useParams();
+  const [searchURL,setSearchURL]=useState(`api/developer/${id}`)
+  const [error,setError]= useState(null);
+  const [state, setState] = useState({
+    _id: "",
+    username: "",
+    password: "",
+    name: "",
+    gitHub: "",
+    languages: [],
+    email: "",
+    phone: 0,
+    experience: 0,
+    location: "",
+    occupation: "",
+    appRole: "",
+    followedUsers: [],
+    usersFollowing: [],
+    imgURL: "",
+  });
+
+  // const getUserInfo = async () => {
+  //   console.log(id);
+  //   const queryURL = "api/developer/" + id;
+  //   console.log(queryURL);
+  //   let res = await axios.get(queryURL);
+  //   setState( res.data);
+  // };
+
+  useEffect(() => {
+    // getUserInfo();
+    // const queryURL = "api/developer/" + id;
+    // console.log(queryURL);
+    console.log({id}.id)
+    fetch(searchURL).then(res => res.json())
+    .then(
+      (result) => {
+        setState(result);},(error) => {
+          setError(error);
+        })
+  }, []);
+
     return (
         <>
       <Navbar />
