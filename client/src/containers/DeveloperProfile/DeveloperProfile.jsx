@@ -31,19 +31,34 @@ const DeveloperProfile = () => {
   //   console.log(queryURL);
   //   let res = await axios.get(queryURL);
   //   setState( res.data);
+  
   // };
+  const getUserInfo = () => {
+    console.log(id);
+    const queryURL = "/api/developer/" + id;
+    console.log(queryURL);
+    axios
+      .get(queryURL)
+      .then((res) => {
+        console.log(res.data);
+        setState(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   useEffect(() => {
-    // getUserInfo();
+    getUserInfo();
     // const queryURL = "api/developer/" + id;
-    // console.log(queryURL);
-    console.log({id}.id)
-    fetch(searchURL).then(res => res.json())
-    .then(
-      (result) => {
-        setState(result);},(error) => {
-          setError(error);
-        })
+    // console.log(searchURL);
+    // console.log({id}.id)
+    // fetch(searchURL).then(res => res.json())
+    // .then(
+    //   (result) => {
+    //     setState(result);},(error) => {
+    //       setError(error);
+    //     })
   }, []);
 
     return (
