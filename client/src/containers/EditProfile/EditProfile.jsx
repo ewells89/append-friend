@@ -14,7 +14,7 @@ const EditProfile = (authUser) => {
     password: "",
     name: "",
     gitHub: "",
-    languages: [],
+    about: "",
     email: "",
     phone: 0,
     experience: 0,
@@ -47,24 +47,26 @@ const EditProfile = (authUser) => {
     getUserInfo();
   }, []);
 
-  const userInfo = {
-    name:state.name,
-    email:state.email,
-    experience:state.experience,
-    location:state.location,
-    occupation:state.occupation,
-    appRole:state.appRole,
-    gitHub:state.gitHub,
-    languages:state.languages,
-  };
 
-  const handleFormSubmit = (e,userData) => {
+
+  const handleFormSubmit = (e) => {
     e.preventDefault();
     const queryURL = "api/developer/" + authUser.authUser;
+    const userInfo = {
+      name:state.name,
+      email:state.email,
+      experience:state.experience,
+      location:state.location,
+      occupation:state.occupation,
+      appRole:state.appRole,
+      gitHub:state.gitHub,
+      about:state.about,
+      imgURL:imgURL,
+    };
     console.log(queryURL);
     console.log(userInfo);
     axios
-      .put(queryURL, userData)
+      .put(queryURL, userInfo)
       .then((response) => {
         console.log(response.data);
         history.push("/profile");
@@ -91,16 +93,10 @@ const EditProfile = (authUser) => {
      setPictures(pictureFiles[0]);
   }
 
-  /* Maybe: Build in this function to the handleFormSubmit function & 
-     remove image upload button. */
   const handleImageUpload = () => {
     const fd = new FormData();
-    /* TODO: Figure out how to pass down the authUser value on state 
-    from app.js and use it as part of the input parameters to the axios 
-    call. We can use this value to retrieve the image from storage. */
     fd.append("file",pictures)
     fd.append("upload_preset","ml_default")
-    /* TODO: Add API Post route here. */
     axios.post("https://api.cloudinary.com/v1_1/kayilan/image/upload", fd)
     .then(res => {
       // console.log(res);
@@ -144,7 +140,7 @@ const EditProfile = (authUser) => {
         </div>
 
         <div className="row">
-          <form onSubmit={(e) => {handleFormSubmit(e,userInfo)}}>
+          <form onSubmit={handleFormSubmit}>
             <div className="col s6" id="profilePageColumn">
               <div className="input-field">
                 <input
@@ -244,16 +240,16 @@ const EditProfile = (authUser) => {
               </div>
 
               <div className="row">
-                <p>Languages</p>
+                <p>About Me:</p>
                 <div className="input-field">
                   <textarea
-                    id="languages"
+                    id="about"
                     className="materialize-textarea"
-                    value={state.languages}
+                    value={state.about}
                     onChange={handleInputChange}
                   ></textarea>
-                  <label className="active" for="languages">
-                    Enter your regularly used languages here.
+                  <label className="active" for="about">
+                    Enter a professional description of yourself here.
                   </label>
                 </div>
               </div>
@@ -266,7 +262,7 @@ const EditProfile = (authUser) => {
             </button>
           </div>
           <div className="col s6" id="profilePageColumnSave">
-          <button id="save-button" className="waves-effect waves-dark btn">
+          <button type="submit" id="save-button" className="waves-effect waves-dark btn">
             Save Changes
           </button>
           </div>
