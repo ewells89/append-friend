@@ -24,7 +24,7 @@ module.exports = {
       .catch(() => res.sendStatus(500));
   },
   getById: (req,res) => {
-    User.findOne({_id: req.params.id}).then((foundUser) =>{
+    User.findById({_id: req.params.id}).then((foundUser) =>{
       console.log(foundUser);
       res.json(foundUser);
     });

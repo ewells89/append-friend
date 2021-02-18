@@ -24,6 +24,7 @@ const Profile = (authUser) => {
   });
 
   const getUserInfo = () => {
+    console.log(authUser.authUser);
     const queryURL = "api/developer/" + authUser.authUser;
     console.log(queryURL);
     axios

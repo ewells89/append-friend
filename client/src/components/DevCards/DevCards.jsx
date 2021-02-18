@@ -1,8 +1,10 @@
 import React from 'react';
 import './DevCards.css';
+import {NavLink} from "react-router-dom";
 // import PropTypes from "prop-types";
 
-const DevCards = ({username,name,gitHub,description,phone,experience,location,occupation,appRole,imgURL}) => {
+const DevCards = ({_id,username,name,gitHub,description,phone,experience,location,occupation,appRole,imgURL}) => {
+    
     return (
         
         <div className="col s4">
@@ -41,7 +43,7 @@ const DevCards = ({username,name,gitHub,description,phone,experience,location,oc
                 </div>
                 <div className="row" id="devCardRow">
                     <div className="col s6">
-                        <button class="waves-effect waves-light white-text grey  btn-small">Profile</button>
+                        <NavLink to={`/developerprofile/${_id}`} ><button className="waves-effect waves-light white-text grey  btn-small">Profile</button></NavLink>
                     </div>
                     <div className="col s6" id="devCardButtonLike">
                         <button className="waves-effect waves-light grey btn-small">

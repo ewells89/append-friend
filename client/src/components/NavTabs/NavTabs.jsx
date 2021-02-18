@@ -11,7 +11,7 @@ const NavTabs = () => {
         <li className="tab col s3"><NavLink to="/profile"><i className="material-icons">account_box</i>Profile</NavLink></li>
           
           
-        <a className="tab col s3 right"><NavLink to="/signin"><i className="material-icons">close</i>Sign Out</NavLink></a>
+        <li className="tab col s3 right"><NavLink to="/"><i className="material-icons">close</i>Sign Out</NavLink></li>
       </ul>
     </div>
   );
