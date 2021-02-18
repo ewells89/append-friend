@@ -23,10 +23,11 @@ const EditProfile = (authUser) => {
     appRole: "",
     followedUsers: [],
     usersFollowing: [],
+    imgURL: "",
   });
 
   const [pictures,setPictures] = useState([]);
-  const [imgURL, setImgURL] = useState("");
+  // const [imgURL, setImgURL] = useState("");
 
   const history = useHistory();
 
@@ -61,7 +62,7 @@ const EditProfile = (authUser) => {
       appRole:state.appRole,
       gitHub:state.gitHub,
       about:state.about,
-      imgURL:imgURL,
+      imgURL:state.imgURL,
     };
     console.log(queryURL);
     console.log(userInfo);
@@ -100,7 +101,7 @@ const EditProfile = (authUser) => {
     axios.post("https://api.cloudinary.com/v1_1/kayilan/image/upload", fd)
     .then(res => {
       // console.log(res);
-      setImgURL(res.data.secure_url);
+      setState({...state, imgURL:(res.data.secure_url)});
       // console.log(imgURL);
     }).catch((err) => {
       console.log(err);

@@ -90,7 +90,7 @@ const Profile = (authUser) => {
               <div className="card horizontal">
                 <div className="card-stacked">
                   <div className="card-content">
-                    <p>{state.languages}</p>
+                    <p>{state.about}</p>
                   </div>
                   <div className="card-action">
                     <a href="">This is a link</a>
