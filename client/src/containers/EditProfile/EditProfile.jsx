@@ -26,6 +26,7 @@ const EditProfile = (authUser) => {
   });
 
   const [pictures,setPictures] = useState([]);
+  const [imgURL, setImgURL] = useState("");
 
   const history = useHistory();
 
@@ -86,9 +87,8 @@ const EditProfile = (authUser) => {
   }
 
   const onDrop = (pictureFiles,pictureDataURLs) => {
-     console.log(pictureFiles);
-     setPictures(pictureFiles);
-    // console.log(pictures);
+     console.log(pictureFiles[0]);
+     setPictures(pictureFiles[0]);
   }
 
   /* Maybe: Build in this function to the handleFormSubmit function & 
@@ -103,7 +103,9 @@ const EditProfile = (authUser) => {
     /* TODO: Add API Post route here. */
     axios.post("https://api.cloudinary.com/v1_1/kayilan/image/upload", fd)
     .then(res => {
-      console.log(res);
+      // console.log(res);
+      setImgURL(res.data.secure_url);
+      // console.log(imgURL);
     }).catch((err) => {
       console.log(err);
     });
@@ -128,9 +130,6 @@ const EditProfile = (authUser) => {
               />
             
             
-
-
-
             <div className="row" id="profilePageColumnUpload">
               <button 
                 id="upload-button" 
