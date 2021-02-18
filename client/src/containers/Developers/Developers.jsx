@@ -3,12 +3,13 @@ import Navbar from "../../components/Navbar/Navbar";
 import DevCards from "../../components/DevCards/DevCards";
 import axios from "axios";
 
-const Developers = () => {
+const Developers = (authUser) => {
   const [developers, setDevelopers] = useState([]);
   const [filterDevs, setFilterDevs] = useState([]);
 
   useEffect(() => {
-    getDevs()
+    localStorage.setItem("loggedUserID", authUser.authUser);
+    getDevs();
   }, []);
 
   const getDevs = () => {
