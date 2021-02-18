@@ -5,6 +5,7 @@ import axios from "axios";
 
 const DevelopersWhoLikeYou = (authUser) => {
   const [developers, setDevelopers] = useState([]);
+  const [filterDevs, setFilterDevs] = useState([]);
 
   const getDevsWhoLikeYou = () => {
     const queryOne = axios.get("api/developer/" + authUser.authUser);
@@ -22,11 +23,19 @@ const DevelopersWhoLikeYou = (authUser) => {
           });
         }
         setDevelopers(likedBy);
+        setFilterDevs(likedBy);
       })
       ).catch((err) => {
         console.log(err);
     });
 };
+
+const searchCallback = (searchInput) =>{
+  const filterSearch = filterDevs.filter((user) => {
+     return user.name.toLowerCase().includes(searchInput);
+   });
+   setDevelopers(filterSearch);
+}
 
   useEffect(() => {
     getDevsWhoLikeYou()
@@ -34,7 +43,7 @@ const DevelopersWhoLikeYou = (authUser) => {
 
   return (
     <>
-      <Navbar />
+      <Navbar searchCallBack={searchCallback}/>
       <div className="container">
         <div className="row">
           {developers.map((developer) => {

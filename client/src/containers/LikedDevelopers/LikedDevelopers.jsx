@@ -6,6 +6,7 @@ import axios from "axios";
 const LinkedDevelopers = (authUser) => {
 
   const [developers, setDevelopers] = useState([]);
+  const [filterDevs, setFilterDevs] = useState([]);
 
   const getUserInfo = () => {
       const queryOne = axios.get("api/developer/" + authUser.authUser);
@@ -23,11 +24,19 @@ const LinkedDevelopers = (authUser) => {
             });
           }
           setDevelopers(likedUsers);
+          setFilterDevs(likedUsers);
         })
         ).catch((err) => {
           console.log(err);
       });
   };
+
+  const searchCallback = (searchInput) =>{
+    const filterSearch = filterDevs.filter((user) => {
+       return user.name.toLowerCase().includes(searchInput);
+     });
+     setDevelopers(filterSearch);
+  }
 
   useEffect(() => {
     getUserInfo();
@@ -35,7 +44,7 @@ const LinkedDevelopers = (authUser) => {
 
   return (
     <>
-      <Navbar />
+      <Navbar searchCallBack={searchCallback} />
       <div className="container">
         <div className="row">
           {developers.map((developer) => {
