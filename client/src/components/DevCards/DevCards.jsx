@@ -2,7 +2,7 @@ import React from 'react';
 import './DevCards.css';
 // import PropTypes from "prop-types";
 
-const DevCards = ({username,name,gitHub,description,phone,experience,location,occupation,appRole}) => {
+const DevCards = ({username,name,gitHub,description,phone,experience,location,occupation,appRole,imgURL}) => {
     return (
         
         <div className="col s4">
@@ -10,7 +10,7 @@ const DevCards = ({username,name,gitHub,description,phone,experience,location,oc
                 <div className="row">
                     <div className="col s5">
                         <div className="card-image">
-                            <img id="devCardDevImage" src="" alt={name}/>
+                            <img id="devCardDevImage" src={imgURL} alt={name}/>
                         </div>
                     </div>
                 
