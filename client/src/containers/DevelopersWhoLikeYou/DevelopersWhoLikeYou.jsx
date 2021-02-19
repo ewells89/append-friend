@@ -38,7 +38,8 @@ const searchCallback = (searchInput) =>{
 }
 
   useEffect(() => {
-    getDevsWhoLikeYou()
+    getDevsWhoLikeYou();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
