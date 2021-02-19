@@ -264,7 +264,7 @@ const EditProfile = (authUser) => {
             </button>
           </div>
           <div className="col s6" id="profilePageColumnSave">
-          <button type="submit" id="save-button" className="waves-effect waves-dark btn">
+          <button type="submit" id="save-button" className="waves-effect blue lighten-1 waves-dark btn">
             Save Changes
           </button>
           </div>
