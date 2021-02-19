@@ -9,8 +9,8 @@ const SignupForm = ({handleFormSubmit}) => {
     gitHub: "",
     languages: [],
     email: "",
-    phone: 0,
-    experience: 0,
+    phone: "",
+    experience: "",
     location: "",
     occupation: "",
     appRole: "",
@@ -20,19 +20,6 @@ const SignupForm = ({handleFormSubmit}) => {
 
   const updateForm = (e) =>
     setState({ ...state, [e.target.id]: e.target.value });
-
-  // const [name, setName] = useState("");
-  // const [username, setUsername] = useState("");
-  // const [password, setPassword] = useState("");
-  // const [email, setEmail] = useState("");
-  // const [phone, setPhone] = useState("");
-  // const [gitHub, setGithub] = useState("");
-  // const [location, setLocation] = useState("");
-  // const [occupation, setOccupation] = useState("");
-  // const [experience, setExperience] = useState("");
-  // const [languages, setLanguages] = useState([]);
-  // const [followedUsers, setFollowedUsers] = useState([]);
-  // const [usersFollowing, setUsersFollowing] = useState([]);
 
   return (
     <div className="container">
@@ -53,7 +40,7 @@ const SignupForm = ({handleFormSubmit}) => {
               value={state.name}
               onChange={updateForm}
             />
-            <label for="name">Name *</label>
+            <label>Name *</label>
           </div>
           <div className="input-field col s6">
             <input
@@ -63,7 +50,7 @@ const SignupForm = ({handleFormSubmit}) => {
               onChange={updateForm}
               value={state.username}
             />
-            <label for="username">Username *</label>
+            <label>Username *</label>
           </div>
         </div>
         <div className="row">
@@ -75,7 +62,7 @@ const SignupForm = ({handleFormSubmit}) => {
               onChange={updateForm}
               value={state.password}
             />
-            <label for="password">Password *</label>
+            <label>Password *</label>
           </div>
         </div>
         <div className="row">
@@ -87,27 +74,29 @@ const SignupForm = ({handleFormSubmit}) => {
               onChange={updateForm}
               value={state.email}
             />
-            <label for="email">Email *</label>
+            <label>Email *</label>
           </div>
           <div className="input-field col s6">
             <input
               id="phone"
               type="text"
+              placeholder= "Enter number with no dashes or parentheses"
               className="validate"
               onChange={updateForm}
               value={state.phone}
             />
-            <label className="active" for="phone">Phone</label>
+            <label className="active">Phone</label>
           </div>
           <div className="input-field col s6">
             <input
               id="gitHub"
               type="text"
               className="validate"
+              placeholder="https://github.com/{profileName}"
               onChange={updateForm}
               value={state.gitHub}
             />
-            <label for="gitHub">Github Profile</label>
+            <label className="active">Github Profile</label>
           </div>
           <div className="input-field col s6">
             <input
@@ -117,7 +106,7 @@ const SignupForm = ({handleFormSubmit}) => {
               onChange={updateForm}
               value={state.location}
             />
-            <label for="location">Location</label>
+            <label>Location</label>
           </div>
           <div className="input-field col s6">
             <input
@@ -127,7 +116,7 @@ const SignupForm = ({handleFormSubmit}) => {
               onChange={updateForm}
               value={state.occupation}
             />
-            <label for="occupation">Occupation</label>
+            <label>Occupation</label>
           </div>
           <div className="input-field col s6">
             <input
@@ -137,10 +126,10 @@ const SignupForm = ({handleFormSubmit}) => {
               onChange={updateForm}
               value={state.experience}
             />
-            <label className="active" for="experience">Years of Experience</label>
+            <label>Years of Experience</label>
           </div>
         </div>
-        <div class="row" id="signUpButton">
+        <div className="row" id="signUpButton">
           <button
             className="btn waves-effect waves-dark blue darken-1 btn-small"
             type="submit"
