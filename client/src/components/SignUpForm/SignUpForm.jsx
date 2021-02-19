@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./SignUpForm.css";
 
 const SignupForm = ({handleFormSubmit}) => {
   const [state, setState] = useState({
@@ -34,7 +35,7 @@ const SignupForm = ({handleFormSubmit}) => {
   // const [usersFollowing, setUsersFollowing] = useState([]);
 
   return (
-    <div>
+    <div className="container">
       <form
         className="col s12"
         onSubmit={(e) => {
@@ -45,14 +46,14 @@ const SignupForm = ({handleFormSubmit}) => {
         <div className="row">
           <div className="input-field col s6">
             <input
-              placeholder="Name"
+              
               id="name"
               type="text"
               className="validate"
               value={state.name}
               onChange={updateForm}
             />
-            <label for="name">Name</label>
+            <label for="name">Name *</label>
           </div>
           <div className="input-field col s6">
             <input
@@ -62,7 +63,7 @@ const SignupForm = ({handleFormSubmit}) => {
               onChange={updateForm}
               value={state.username}
             />
-            <label for="username">Username</label>
+            <label for="username">Username *</label>
           </div>
         </div>
         <div className="row">
@@ -74,7 +75,7 @@ const SignupForm = ({handleFormSubmit}) => {
               onChange={updateForm}
               value={state.password}
             />
-            <label for="password">Password</label>
+            <label for="password">Password *</label>
           </div>
         </div>
         <div className="row">
@@ -86,7 +87,7 @@ const SignupForm = ({handleFormSubmit}) => {
               onChange={updateForm}
               value={state.email}
             />
-            <label for="email">Email</label>
+            <label for="email">Email *</label>
           </div>
           <div className="input-field col s6">
             <input
@@ -139,13 +140,16 @@ const SignupForm = ({handleFormSubmit}) => {
             <label className="active" for="experience">Years of Experience</label>
           </div>
         </div>
-        <button
-          className="btn waves-effect waves-dark"
-          type="submit"
-          name="action"
-        >
-          Submit
-        </button>
+        <div class="row" id="signUpButton">
+          <button
+            className="btn waves-effect waves-dark blue darken-1 btn-small"
+            type="submit"
+            name="action"
+            id="signUpButton"
+          >
+            Submit
+          </button>
+        </div>
       </form>
     </div>
   );

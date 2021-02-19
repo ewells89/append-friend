@@ -5,7 +5,7 @@ function Footer() {
   return <div> <footer className="page-footer font-small black">
 
 
-  <div className= "footer" style={{textAlign: "center"}}>©Copyright 2021: .append(friend)</div>
+  <div className= "footer" style={{textAlign: "center"}}>©Copyright 2021: <span id="appTitle">.<span id="titleAppend">append</span>(<span id="titleFriend">friend</span>)</span></div>
 
 
 </footer></div>;

@@ -51,65 +51,61 @@ const Profile = (authUser) => {
       <div className="container">
         <div className="row">
           <div className="col s6">
-            <div className="row">
-              <div className="col s12">
-                <div className="card">
-                  <div className="card-image">
-                    <img src={state.imgURL} />
-                    <span className="card-title" id="name">
-                      {state.name}
-                    </span>
-                  </div>
+            <div className="card">
+              <div className="card-image" id="devCardImageContainer">
+                <img src={state.imgURL} id="profilePagePicture"/>
+                <span className="card-title" id="name">
+                  {state.name}
+                </span>
+              </div>
 
-                  <div className="card-content">
-                    <ul className="collection">
-                      <li className="collection-item" placeholder="App Role:">
-                        Role: {state.appRole}
-                      </li>
-                      <li className="collection-item">
-                        Occupation: {state.occupation}
-                      </li>
-                      <li className="collection-item">
-                        Experience: {state.experience} years
-                      </li>
-                      <li className="collection-item">
-                        Location: {state.location}
-                      </li>
-                      <li className="collection-item">{state.gitHub}</li>
-                      <li className="collection-item">{state.email}</li>
-                      <li className="collection-item">{state.phone}</li>
-                    </ul>
-                  </div>
-                </div>
+              <div className="card-content">
+                <ul className="collection">
+                  <li className="collection-item" placeholder="App Role:">
+                    Role: {state.appRole}
+                  </li>
+                  <li className="collection-item">
+                    Occupation: {state.occupation}
+                  </li>
+                  <li className="collection-item">
+                    Experience: {state.experience} years
+                  </li>
+                  <li className="collection-item">
+                    Location: {state.location}
+                  </li>
+                  <li className="collection-item">gitHub: {state.gitHub}</li>
+                  <li className="collection-item">Email: {state.email}</li>
+                  <li className="collection-item">Phone: {state.phone}</li>
+                </ul>
               </div>
             </div>
           </div>
 
-          <div className="col s6">
-            <div className="col s12">
+
+          <div className="col s6" id="profilePageAboutCol">
+
+            <div className="row">
               <h6 className="header">About Me:</h6>
               <div className="card horizontal">
                 <div className="card-stacked">
                   <div className="card-content">
                     <p>{state.about}</p>
                   </div>
-                  <div className="card-action">
-                    <a href="">This is a link</a>
-                  </div>
                 </div>
               </div>
             </div>
-            <div className="row" id="profilePageButtons">
+
+          </div>
+        </div>
+
+        <div className="row" id="profilePageButtons">
               <NavLink
                 to="/editprofile"
                 id="edit-profile-button"
-                className="waves-effect waves-dark btn"
-              >
-                Edit Profile
+                className="waves-effect waves-dark blue lighten-1 btn-small"
+              >Edit Profile
               </NavLink>
             </div>
-          </div>
-        </div>
       </div>
     </>
   );

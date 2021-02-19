@@ -33,9 +33,7 @@ const SignIn = ({setToken, setAuthUser}) => {
   };
   return (
     <>
-      <h4 style={{ fontFamily: "monospace", textAlign: "center" }}>
-        .append(friend)
-      </h4>
+      <h3 id="appTitle" className="center">.<span id="titleAppend">append</span>(<span id="titleFriend">friend</span>)</h3>
       <div className="row input-fields">
         <p id="please-sign-in">Please sign in below.</p>
         <form className="col s12" onSubmit={handleFormSubmit}>
@@ -69,13 +67,13 @@ const SignIn = ({setToken, setAuthUser}) => {
               </div>
             </div>
           </div>
-          <button id="sign-in-button" className="waves-effect waves-dark btn">
+          <button id="sign-in-button" className="waves-effect waves-dark blue darken-1 btn-small">
             Sign in
           </button>
           <NavLink
             to="/signup"
             id="sign-up-button"
-            className="waves-effect waves-dark btn"
+            className="waves-effect waves-dark blue darken-1 btn-small"
           >
             Sign up
           </NavLink>

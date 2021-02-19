@@ -1,7 +1,7 @@
 #devCardBody {
     width:350px;
     height: 450px;
-    background-color:thistle;
+    background-color:whitesmoke;
     padding:10px;
 }
 
@@ -13,9 +13,11 @@
     margin-bottom:0px;
 }
 #devCardDevImage {
-    height:100px;
-    width:100px;
-    margin-right:10;
+    height:auto;
+    max-height:100px;
+    width:auto;
+    max-width:100px;
+    margin:auto;
     background-color:ghostwhite;
     border-radius:10px;
 }
@@ -72,4 +74,16 @@
 
 #devCardButtonLike {
     text-align:right;
+}
+
+@media screen and (max-width:1600px) {
+    .container {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:1300px) {
+    .container {
+        width: 100%;
+    }
 }

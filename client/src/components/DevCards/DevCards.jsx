@@ -20,7 +20,7 @@ const DevCards = ({_id,username,name,gitHub,description,phone,experience,locatio
     };
 
     return (
-        <div className="col s4">
+        <div className="col l4 m6 s12">
             <div className="card" id="devCardBody">
                 <div className="row">
                     <div className="col s5">
@@ -56,10 +56,10 @@ const DevCards = ({_id,username,name,gitHub,description,phone,experience,locatio
                 </div>
                 <div className="row" id="devCardRow">
                     <div className="col s6">
-                        <NavLink to={`/developerprofile/${_id}`} ><button className="waves-effect waves-light white-text grey  btn-small">Profile</button></NavLink>
+                        <NavLink to={`/developerprofile/${_id}`} ><button className="waves-effect waves-light white-text blue lighten-1 btn-small">Profile</button></NavLink>
                     </div>
                     <div className="col s6" id="devCardButtonLike">
-                        <button className="waves-effect waves-light grey btn-small" onClick={()=>{likeButton(_id)}}>
+                        <button className="waves-effect waves-light pink lighten-1 btn-small" onClick={()=>{likeButton(_id)}}>
                             <i className="material-icons">favorite</i>
                         </button>
                     </div>
