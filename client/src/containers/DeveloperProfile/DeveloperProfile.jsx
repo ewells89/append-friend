@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 const DeveloperProfile = () => {
   let {id} = useParams();
@@ -72,12 +72,13 @@ const DeveloperProfile = () => {
             <div className="card">
               <div className="card-image" id="devCardImageContainer">
                 <img alt={state.name} src={state.imgURL} id="profilePagePicture"/>
-                <span className="card-title" id="name">
-                  {state.name}
-                </span>
+                
               </div>
 
               <div className="card-content">
+              <span className="card-title" id="name">
+                  {state.name}
+                </span>
                 <ul className="collection">
                   <li className="collection-item" placeholder="App Role:">
                     Role: {state.appRole}
@@ -91,7 +92,7 @@ const DeveloperProfile = () => {
                   <li className="collection-item">
                     Location: {state.location}
                   </li>
-                  <li className="collection-item">gitHub: {state.gitHub}</li>
+                  <li className="collection-item">gitHub: <a href={state.gitHub} target="_blank">{state.gitHub}</a></li>
                   <li className="collection-item">Email: {state.email}</li>
                   <li className="collection-item">Phone: {state.phone}</li>
                 </ul>
