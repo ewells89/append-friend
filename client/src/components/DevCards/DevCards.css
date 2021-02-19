@@ -1,7 +1,7 @@
 #devCardBody {
     width:350px;
     height: 450px;
-    background-color:thistle;
+    background-color:gainsboro;
     padding:10px;
 }
 
@@ -13,9 +13,11 @@
     margin-bottom:0px;
 }
 #devCardDevImage {
-    height:100px;
-    width:100px;
-    margin-right:10;
+    height:auto;
+    max-height:100px;
+    width:auto;
+    max-width:100px;
+    margin:auto;
     background-color:ghostwhite;
     border-radius:10px;
 }
@@ -60,7 +62,7 @@
     margin:10px;
     padding:10px;
     padding-bottom:25px;
-    height:150px;
+    max-height:150px;
     width:95%;
 }
 
