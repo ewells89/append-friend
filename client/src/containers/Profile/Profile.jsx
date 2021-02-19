@@ -52,7 +52,7 @@ const Profile = (authUser) => {
         <div className="row">
           <div className="col s6">
             <div className="card">
-              <div className="card-image" >
+              <div className="card-image" id="devCardImageContainer">
                 <img src={state.imgURL} id="profilePagePicture"/>
                 <span className="card-title" id="name">
                   {state.name}

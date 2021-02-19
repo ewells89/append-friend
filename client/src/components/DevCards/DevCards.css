@@ -1,7 +1,7 @@
 #devCardBody {
     width:350px;
     height: 450px;
-    background-color:gainsboro;
+    background-color:whitesmoke;
     padding:10px;
 }
 
@@ -74,4 +74,16 @@
 
 #devCardButtonLike {
     text-align:right;
+}
+
+@media screen and (max-width:1600px) {
+    .container {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:1300px) {
+    .container {
+        width: 100%;
+    }
 }
