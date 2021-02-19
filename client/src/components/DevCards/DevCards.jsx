@@ -20,7 +20,7 @@ const DevCards = ({_id,username,name,gitHub,description,phone,experience,locatio
     };
 
     return (
-        <div className="col l4 m6 s12">
+        <div className="col l4 m6 s12" id="devCardDisplayCol">
             <div className="card" id="devCardBody">
                 <div className="row">
                     <div className="col s5">

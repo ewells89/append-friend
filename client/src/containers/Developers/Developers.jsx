@@ -36,7 +36,7 @@ const Developers = (authUser) => {
     <>
       <Navbar searchCallBack={searchCallback}/>
       <div className="container">
-        <div className="row">
+        <div className="row" id="developerCardRow">
           {developers.map((developer) => {
             return <DevCards {...developer} key={developer._id} />;
           })}
