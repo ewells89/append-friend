@@ -4,7 +4,7 @@ import {NavLink} from "react-router-dom";
 import axios from 'axios';
 // import PropTypes from "prop-types";
 
-const DevCards = ({_id,username,name,gitHub,description,phone,experience,location,occupation,appRole,imgURL}) => {
+const DevCards = ({_id,username,name,gitHub,about,phone,experience,location,occupation,appRole,imgURL}) => {
 
     const likeButton = (id) => {
         const storedID = localStorage.getItem("loggedUserID");
@@ -50,7 +50,7 @@ const DevCards = ({_id,username,name,gitHub,description,phone,experience,locatio
                 <div className="row" id="devCardRow">
                     <div className="card-content" id="devCardDevDescription">
                         <p>
-                            {description}
+                            {about}
                         </p>
                     </div>
                 </div>

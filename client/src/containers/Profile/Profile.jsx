@@ -40,11 +40,13 @@ const Profile = (authUser) => {
 
   useEffect(() => {
     getUserInfo();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const handleInputChange = (e) => {
-    setState({ ...state, [e.target.id]: e.target.value });
-  };
+  // const handleInputChange = (e) => {
+  //   setState({ ...state, [e.target.id]: e.target.value });
+  // };
+
   return (
     <>
       <Navbar />
@@ -53,7 +55,7 @@ const Profile = (authUser) => {
           <div className="col s6">
             <div className="card">
               <div className="card-image" id="devCardImageContainer">
-                <img src={state.imgURL} id="profilePagePicture"/>
+                <img alt={state.name} src={state.imgURL} id="profilePagePicture"/>
                 <span className="card-title" id="name">
                   {state.name}
                 </span>

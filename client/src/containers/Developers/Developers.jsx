@@ -10,6 +10,7 @@ const Developers = (authUser) => {
   useEffect(() => {
     localStorage.setItem("loggedUserID", authUser.authUser);
     getDevs();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const getDevs = () => {

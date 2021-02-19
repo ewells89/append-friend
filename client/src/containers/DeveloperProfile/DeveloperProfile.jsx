@@ -5,8 +5,8 @@ import { useParams } from "react-router-dom";
 
 const DeveloperProfile = () => {
   let {id} = useParams();
-  const [searchURL,setSearchURL]=useState(`api/developer/${id}`)
-  const [error,setError]= useState(null);
+  // const [searchURL,setSearchURL]=useState(`api/developer/${id}`)
+  // const [error,setError]= useState(null);
   const [state, setState] = useState({
     _id: "",
     username: "",
@@ -59,6 +59,8 @@ const DeveloperProfile = () => {
     //     setState(result);},(error) => {
     //       setError(error);
     //     })
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
     return (
@@ -69,7 +71,7 @@ const DeveloperProfile = () => {
           <div className="col s6">
             <div className="card">
               <div className="card-image" id="devCardImageContainer">
-                <img src={state.imgURL} id="profilePagePicture"/>
+                <img alt={state.name} src={state.imgURL} id="profilePagePicture"/>
                 <span className="card-title" id="name">
                   {state.name}
                 </span>
