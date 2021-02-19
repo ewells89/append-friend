@@ -3,6 +3,8 @@
     height: 450px;
     background-color:whitesmoke;
     padding:10px;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 .devCardP {
@@ -12,6 +14,7 @@
 #devCardRow {
     margin-bottom:0px;
 }
+
 #devCardDevImage {
     height:auto;
     max-height:100px;
