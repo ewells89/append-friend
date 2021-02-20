@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
-// import ImageUpload from "../../components/ImageUpload/ImageUpload";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 import "./Profile.css";
@@ -13,8 +12,8 @@ const Profile = (authUser) => {
     gitHub: "",
     languages: [],
     email: "",
-    phone: 0,
-    experience: 0,
+    phone: "",
+    experience: "",
     location: "",
     occupation: "",
     appRole: "",
@@ -43,14 +42,11 @@ const Profile = (authUser) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // const handleInputChange = (e) => {
-  //   setState({ ...state, [e.target.id]: e.target.value });
-  // };
-
   return (
     <>
       <Navbar />
       <div className="container">
+
         <div className="row">
           <div className="col s6">
             <div className="card">
@@ -86,7 +82,14 @@ const Profile = (authUser) => {
 
 
           <div className="col s6" id="profilePageAboutCol">
-
+          <div className="row" id="profilePageButtons">
+              <NavLink
+                to="/editprofile"
+                id="edit-profile-button"
+                className="waves-effect waves-dark blue lighten-1 btn-small"
+              >Edit Profile
+              </NavLink>
+            </div>
             <div className="row">
               <h6 className="header">About Me:</h6>
               <div className="card horizontal">
@@ -97,18 +100,8 @@ const Profile = (authUser) => {
                 </div>
               </div>
             </div>
-
           </div>
         </div>
-
-        <div className="row" id="profilePageButtons">
-              <NavLink
-                to="/editprofile"
-                id="edit-profile-button"
-                className="waves-effect waves-dark blue lighten-1 btn-small"
-              >Edit Profile
-              </NavLink>
-            </div>
       </div>
     </>
   );
