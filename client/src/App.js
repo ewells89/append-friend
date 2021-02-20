@@ -30,7 +30,6 @@ function App() {
         <ProtectedRoute exact path="/profile" component={Profile} token={token} authUser={authUser}/>
         <ProtectedRoute exact path="/editprofile" component={EditProfile} token={token} authUser={authUser}/>
         <ProtectedRoute path="/developerprofile/:id" component={DeveloperProfile} token={token} authUser={authUser}/>
-        {/* <Route exact path="/profilepage" component={ProfilePage} /> */}
       </Switch>
       <Footer/>
       

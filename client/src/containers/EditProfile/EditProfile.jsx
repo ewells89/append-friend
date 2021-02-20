@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
-// import ImageUpload from "../../components/ImageUpload/ImageUpload";
 import axios from "axios";
 import {useHistory} from "react-router-dom";
 import "./EditProfile.css";
@@ -27,7 +26,6 @@ const EditProfile = (authUser) => {
   });
 
   const [pictures,setPictures] = useState([]);
-  // const [imgURL, setImgURL] = useState("");
 
   const history = useHistory();
 

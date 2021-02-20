@@ -5,7 +5,6 @@ const developerController = require("../../controller/developer");
 // axios.post("/api/developer", newUser)
 router
   .route("/")
-  // .all(isAuth)
   .get(developerController.getALL)
   .post(developerController.create);
 
@@ -13,11 +12,11 @@ router
 // axios.put("/api/developer/37wu4es5dryxjcgkhv"): id of follower the user would like to add
 router
   .route("/:id")
-  // .all(isAuth)
   .get(developerController.getById)
   .delete(developerController.deleteById)
   .put(developerController.editById);
 
+// Route For Liking a developer
 router
   .route("/like/:id")
   .put(developerController.addFollower);
@@ -25,8 +24,3 @@ router
 
 module.exports = router;
 
-// function isAuth(req, res, next) {
-//   if (req.user) return next();
-
-//   res.sendStatus(403);
-// }
