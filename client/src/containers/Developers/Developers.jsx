@@ -17,7 +17,9 @@ const Developers = (authUser) => {
     axios
     .get("/api/developer")
     .then((response) => {
-      console.log(response.data);
+      const loggedID = localStorage.getItem("loggedUserID");
+      const userIndex = response.data.findIndex(a => a._id === loggedID);
+      response.data.splice(userIndex, 1);
       setDevelopers(response.data);
       setFilterDevs(response.data);
     })
