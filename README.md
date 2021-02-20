@@ -1,56 +1,68 @@
-# **.append(friend)**
-  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-  
-  ## **Table of Contents**
+# append(Friend)
 
-      
-  ## **Heroku Deployed**
-  https://guarded-spire-00242.herokuapp.com/
+## Table of Contents
 
-      
-  ## **Description**
+- [Description](#description)
+
+- [Screenshots](#screenshots)
+
+- [Technologies Used](#technology)
+
+- [Links](#links)
+
+- [Contributing](#contributing)
+
+- [License](#license)
+
+- [Copyright](#copyright)
+
+## Description
+
+append(Friend) is a social networking app that connects developers. It’s not about what you know, it’s about who you know.” Networking is the key to success in all fields of work and study. Whether it be for friendships or help with projects, personal or professional, there should be a faster way to network. We want to streamline the networking process for web developers of all kinds.
+
+In order to achieve this goal, we incorporated everything we have learned until this point to create a Full M.E.R.N stack application.
+
+## Sceenshots
+
+![append(friend) Demo](client/src//assets/append-friend.gif)
+
+## Technology
+
+    * React
+    * Node JS
+    * Express
+    * Heroku
+    * JSON Web Token
+    * Materialize
+    * BCRYPT
+    * Axios
+    * React-Router-DOM
+    * Mongoose
+    * MongoDB
+    * dotenv
+    * React Images Upload
+    * Cloudinary API
+
+## Links
+
+append(Friend) Deployed URL:
+    https://guarded-spire-00242.herokuapp.com/
+
+append(Friend) GitHub Repo:
+    https://github.com/jennalala/append-friend
 
 
-  ## **Demo**
-  #### **Desktop/Laptop**
+## Contributing
 
+| **Contributor** |
+[Jenna La Francois](https://github.com/jennalala)|
+[Garrett Lee](https://github.com/rgl10d)|
+[Harshanan Saddanathan](https://github.com/hsaddanathan)|
+[Elyse Wells](https://github.com/ewells89)|
 
-  #### **Mobile**
-  
+## License
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-      
-   ## **Contributors**
-  * [Harshanan Saddanathan](https://github.com/hsaddanathan)
-  * [Garrett Lee](https://github.com/rgl10d)      
-  * [Elyse Wells](https://github.com/ewells89)      
-  * [Jenna LaFrancois](https://github.com/jennalala)
-  
-  ## **Technology Stack**
-  react, mongoDB, javascript, node.js, express.js, 
+## Copyright
 
-
-  ## **Questions**   
-  ####    **For any questions or inquiries please contact us at,**
-
-
-**Harsha Saddanathan**
-  * #### **GitHub:** [@hsaddanathan](https://github.com/hsaddanathan)
-  * #### **Email:** hsaddanathan21@gmail.com
-
- **Garrett Leer**
-  * #### **GitHub:** [@rgl10d](https://github.com/rgl10d)
-  * #### **Email:** rgl10d@gmail.com
-  
-**Elyse Wells**
-  * #### **GitHub:** [@ewells89](https://github.com/ewells89)
-  * #### **Email:** cewells89@gmail.com
-
-**Jenna LaFrancois**
-  * #### **GitHub:** [@jennalala](https://github.com/jennalala)
-  * #### **Email:** jenna.lafrancois@gmail.com
-
-  ## **Credits**
-  
-    
-  ## **License**
-  MIT
+Copyright (c) 2021 append(Friend)
